@@ -1,7 +1,7 @@
 [
     {
         "title": "Hackthebox Doctor writeup",
-        "url": "https://0xdedinfosec.github.io/posts/htb-doctor/",
+        "url": "/posts/htb-doctor/",
         "categories": "Hackthebox, active",
         "tags": "CVE, Server-Side Template Injection, PySplunkWhisperer2_remote.py, LinPEAS",
         "date": "2020-09-28 00:00:00 +0000",
@@ -9,7 +9,7 @@
     },
     {
         "title": "Hackthebox Compromised Writeup",
-        "url": "https://0xdedinfosec.github.io/posts/htb-compromised/",
+        "url": "/posts/htb-compromised/",
         "categories": "Hackthebox, active",
         "tags": "CVE-45267, disable_functions Bypass, pseudoshell, MySQL Backdoor",
         "date": "2020-09-20 00:00:00 +0000",
@@ -17,7 +17,7 @@
     },
     {
         "title": "Hackthebox Sneakymailer writeup",
-        "url": "https://0xdedinfosec.github.io/posts/htb-sneakymailer/",
+        "url": "/posts/htb-sneakymailer/",
         "categories": "Hackthebox, active",
         "tags": "email-extractor, pentest-monkey shell, Setting up package, ftp, pypi-server, Pip-gtfobins",
         "date": "2020-07-12 00:00:00 +0000",
@@ -25,7 +25,7 @@
     },
     {
         "title": "Hackthebox Omni Writeup",
-        "url": "https://0xdedinfosec.github.io/posts/htb-omni/",
+        "url": "/posts/htb-omni/",
         "categories": "Hackthebox, active",
         "tags": "SirepRAT, pentest-monkey shell, Netcat Binary",
         "date": "2020-08-24 00:00:00 +0000",
@@ -33,7 +33,7 @@
     },
     {
         "title": "Hackthebox Feline Writeup",
-        "url": "https://0xdedinfosec.github.io/posts/htb-feline/",
+        "url": "/posts/htb-feline/",
         "categories": "Hackthebox, active",
         "tags": "CVE-2020-9484, java.lang.Runtime.exec(), CVE-2020-11651, Public Exploit for CVE-2020-11651, Docker.sock Abusing",
         "date": "2020-09-01 00:00:00 +0000",
@@ -41,7 +41,7 @@
     },
     {
         "title": "Hackthebox Passage Writeup",
-        "url": "https://0xdedinfosec.github.io/posts/htb-passage/",
+        "url": "/posts/htb-passage/",
         "categories": "Hackthebox, active",
         "tags": "CVE-37474, CuteNews 2.0.3 - Arbitrary File Upload, Dbus–USBCreator–Priviesc",
         "date": "2020-09-07 00:00:00 +0000",
@@ -49,7 +49,7 @@
     },
     {
         "title": "Hackthebox Reel2 Writeup",
-        "url": "https://0xdedinfosec.github.io/posts/htb-reel2/",
+        "url": "/posts/htb-reel2/",
         "categories": "Hackthebox, active",
         "tags": "SprayingToolkit,NetNTLMv2 hash stealing using Outlook,Example hashes,behavior of Out-Default",
         "date": "2020-10-11 00:00:00 +0000",
@@ -57,7 +57,7 @@
     },
     {
         "title": "Hackthebox Jewel Writeup",
-        "url": "https://0xdedinfosec.github.io/posts/htb-jewel/",
+        "url": "/posts/htb-jewel/",
         "categories": "Hackthebox, active",
         "tags": "Ruby on Rails,LinPEAS,Google GAuth Authenticator,GTFOBins",
         "date": "2020-10-29 00:00:00 +0000",
@@ -65,7 +65,7 @@
     },
     {
         "title": "Hackthebox Time Writeup",
-        "url": "https://0xdedinfosec.github.io/posts/htb-time/",
+        "url": "/posts/htb-time/",
         "categories": "Hackthebox, active",
         "tags": "Jackson Deserialization,com fasterxml jackson,CVE-2019-12384,LinPEAS,stackoverflow",
         "date": "2020-10-30 00:00:00 +0000",
