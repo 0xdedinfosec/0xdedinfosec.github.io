@@ -1,0 +1,19 @@
+#app {
+    text-align: center
+}
+
+.typeText {
+    color: red;
+}
+
+.typeCursor {
+    color: black;
+}
+
+.dynamic-title {
+    text-align: center;
+}
+
+.h2 {
+    text-align: center;
+}
