@@ -1,0 +1,74 @@
+[
+    {
+        "title": "Hackthebox Doctor writeup",
+        "url": "https://0xdedinfosec.github.io/posts/htb-doctor/",
+        "categories": "Hackthebox, active",
+        "tags": "CVE, Server-Side Template Injection, PySplunkWhisperer2_remote.py, LinPEAS",
+        "date": "2020-09-28 00:00:00 +0000",
+        "snippet": "Introduction@Doctor:~$ Column Details Name Doctor IP 10.10.10.209 Points 20 Os Linux Difficulty Easy Creator egotisticalSW Out On 26 Sept 2020 ..."
+    },
+    {
+        "title": "Hackthebox Compromised Writeup",
+        "url": "https://0xdedinfosec.github.io/posts/htb-compromised/",
+        "categories": "Hackthebox, active",
+        "tags": "CVE-45267, disable_functions Bypass, pseudoshell, MySQL Backdoor",
+        "date": "2020-09-20 00:00:00 +0000",
+        "snippet": "Introduction@Compromised:~$ Column Details Name Compromised IP 10.10.10.207 Points 40 Os Linux Difficulty Hard Creator D4nch3n Out On 12 Sept 2020 Brief@Compromised..."
+    },
+    {
+        "title": "Hackthebox Sneakymailer writeup",
+        "url": "https://0xdedinfosec.github.io/posts/htb-sneakymailer/",
+        "categories": "Hackthebox, active",
+        "tags": "email-extractor, pentest-monkey shell, Setting up package, ftp, pypi-server, Pip-gtfobins",
+        "date": "2020-07-12 00:00:00 +0000",
+        "snippet": "Introduction@sneakymailer:~$ Column Details Name Sneakymailer IP 10.10.10.197 Points 30 Os Linux Difficulty Medium Creator Sulcud Out On 11 July 2020 ..."
+    },
+    {
+        "title": "Hackthebox Omni Writeup",
+        "url": "https://0xdedinfosec.github.io/posts/htb-omni/",
+        "categories": "Hackthebox, active",
+        "tags": "SirepRAT, pentest-monkey shell, Netcat Binary",
+        "date": "2020-08-24 00:00:00 +0000",
+        "snippet": "Introduction@Omni:~$ Column Details Name Omni IP 10.10.10.204 Points 20 Os Other Difficulty Easy Creator egre55 Out On 22 Aug 2020 Brief@Omni:~$..."
+    },
+    {
+        "title": "Hackthebox Feline Writeup",
+        "url": "https://0xdedinfosec.github.io/posts/htb-feline/",
+        "categories": "Hackthebox, active",
+        "tags": "CVE-2020-9484, java.lang.Runtime.exec(), CVE-2020-11651, Public Exploit for CVE-2020-11651, Docker.sock Abusing",
+        "date": "2020-09-01 00:00:00 +0000",
+        "snippet": "Introduction@Feline:~$ Column Details Name Feline IP 10.10.10.205 Points 40 Os Linux Difficulty Hard Creator MinatoTW & MrR3boot Out On 29 Aug 2020..."
+    },
+    {
+        "title": "Hackthebox Passage Writeup",
+        "url": "https://0xdedinfosec.github.io/posts/htb-passage/",
+        "categories": "Hackthebox, active",
+        "tags": "CVE-37474, CuteNews 2.0.3 - Arbitrary File Upload, Dbus–USBCreator–Priviesc",
+        "date": "2020-09-07 00:00:00 +0000",
+        "snippet": "Introduction@Passage:~$ Column Details Name Passage IP 10.10.10.206 Points 30 Os Linux Difficulty Medium Creator ChefByzen Out On 05 Sep 2020..."
+    },
+    {
+        "title": "Hackthebox Reel2 Writeup",
+        "url": "https://0xdedinfosec.github.io/posts/htb-reel2/",
+        "categories": "Hackthebox, active",
+        "tags": "SprayingToolkit,NetNTLMv2 hash stealing using Outlook,Example hashes,behavior of Out-Default",
+        "date": "2020-10-11 00:00:00 +0000",
+        "snippet": "Introduction@Reel2:~$ Column Details Name Reel2 Os Windows Difficulty Hard..."
+    },
+    {
+        "title": "Hackthebox Jewel Writeup",
+        "url": "https://0xdedinfosec.github.io/posts/htb-jewel/",
+        "categories": "Hackthebox, active",
+        "tags": "Ruby on Rails,LinPEAS,Google GAuth Authenticator,GTFOBins",
+        "date": "2020-10-29 00:00:00 +0000",
+        "snippet": "Introduction@Jewel:~$ Column Details Name Jewel Os Linux Difficulty Medium..."
+    },
+    {
+        "title": "Hackthebox Time Writeup",
+        "url": "https://0xdedinfosec.github.io/posts/htb-time/",
+        "categories": "Hackthebox, active",
+        "tags": "Jackson Deserialization,com fasterxml jackson,CVE-2019-12384,LinPEAS,stackoverflow",
+        "date": "2020-10-30 00:00:00 +0000",
+        "snippet": "Introduction@Time:~$ Column Details Name Time Os Linux Difficulty Medium..."
+    }
+]
