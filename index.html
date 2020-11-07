@@ -3,12 +3,15 @@
     <head>
         <script src="https://cdn.onesignal.com/sdks/OneSignalSDK.js" async=""></script>
         <script>
-            var OneSignal = window.OneSignal || [];
-            OneSignal.push(function() {
-                OneSignal.init({
-                    appId: "f80eb8e0-fe33-466b-9e51-55cf70a369c0",
-                });
+          window.OneSignal = window.OneSignal || [];
+          OneSignal.push(function() {
+            OneSignal.init({
+              appId: "f80eb8e0-fe33-466b-9e51-55cf70a369c0",
+              notifyButton: {
+                enable: true,
+              },
             });
+          });
         </script>
 </script><script type="text/javascript" src="/lightgallery/lightbox.js"></script>
 <link rel="stylesheet" href="/lightgallery/lightbox.css">
