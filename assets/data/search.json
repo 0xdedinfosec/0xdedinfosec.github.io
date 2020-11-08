@@ -70,5 +70,13 @@
         "tags": "Jackson Deserialization,com fasterxml jackson,CVE-2019-12384,LinPEAS,stackoverflow",
         "date": "2020-10-30 00:00:00 +0000",
         "snippet": "Introduction@Time:~$ Column Details Name Time Os Linux Difficulty Medium..."
+    },
+    {
+        "title": "Hackthebox Bucket Writeup",
+        "url": "/posts/htb-bucket/",
+        "categories": "Hackthebox, active",
+        "tags": "HTML to PDF converter for Java and .NET",
+        "date": "2020-11-08 00:00:00 +0000",
+        "snippet": "Introduction@Time:~$ Column Details Name Bucket Os Linux Difficulty Medium..."
     }
 ]
