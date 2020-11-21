@@ -86,5 +86,13 @@
         "tags": "PHP Laravel Framework,Composer",
         "date": "2020-11-11 00:00:00 +0000",
         "snippet": "Introduction@Academy:~$ Column Details Name Academy Os Linux Difficulty Easy..."
+    },
+    {
+        "title": "Hackthebox Laboratory Writeup",
+        "url": "/posts/htb-laboratory/",
+        "categories": "Hackthebox, active",
+        "tags": "reset your root password,Linux Privilege Escalation Using PATH Variable,gitlab-rails console",
+        "date": "2020-11-21 00:00:00 +0000",
+        "snippet": "Introduction@Academy:~$ Column Details Name Laboratory Os Linux Difficulty Easy..."
     }
 ]
