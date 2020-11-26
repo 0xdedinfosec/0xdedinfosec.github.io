@@ -94,5 +94,13 @@
         "tags": "reset your root password,Linux Privilege Escalation Using PATH Variable,gitlab-rails console",
         "date": "2020-11-21 00:00:00 +0000",
         "snippet": "Introduction@Academy:~$ Column Details Name Laboratory Os Linux Difficulty Easy..."
+    },
+    {
+        "title": "Hackthebox Crossfit Writeup",
+        "url": "/posts/htb-crossfit/",
+        "categories": "Hackthebox, active",
+        "tags": "Create a HTTP Request in JS,escapeArgs option is not working properly,pspy64,LinPEAS,john",
+        "date": "2020-11-26 00:00:00 +0000",
+        "snippet": "Introduction@Crossfit:~$ Column Details Name Crossfit Os Linux Difficulty Insane..."
     }
 ]
