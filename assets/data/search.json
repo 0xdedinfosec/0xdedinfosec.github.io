@@ -18,7 +18,7 @@
     {
         "title": "Hackthebox Sneakymailer writeup",
         "url": "/posts/htb-sneakymailer/",
-        "categories": "Hackthebox, active",
+        "categories": "Hackthebox, retired",
         "tags": "email-extractor, pentest-monkey shell, Setting up package, ftp, pypi-server, Pip-gtfobins",
         "date": "2020-07-12 00:00:00 +0000",
         "snippet": "Introduction@sneakymailer:~$ Column Details Name Sneakymailer IP 10.10.10.197 Points 30 Os Linux Difficulty Medium Creator Sulcud Out On 11 July 2020 ..."
