@@ -102,5 +102,13 @@
         "tags": "Create a HTTP Request in JS,escapeArgs option is not working properly,pspy64,LinPEAS,john",
         "date": "2020-11-26 00:00:00 +0000",
         "snippet": "Introduction@Crossfit:~$ Column Details Name Crossfit Os Linux Difficulty Insane..."
+    },
+    {
+        "title": "Hackthebox Luanne Writeup",
+        "url": "/posts/htb-luanne/",
+        "categories": "Hackthebox, active",
+        "tags": "Create a HTTP Request in JS,escapeArgs option is not working properly,pspy64,LinPEAS,john",
+        "date": "2020-11-26 00:00:00 +0000",
+        "snippet": "Introduction@Crossfit:~$ Column Details Name Crossfit Os Linux Difficulty Insane..."
     }
 ]
