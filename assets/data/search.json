@@ -26,7 +26,7 @@
     {
         "title": "Hackthebox Omni Writeup",
         "url": "/posts/htb-omni/",
-        "categories": "Hackthebox, active",
+        "categories": "Hackthebox, retired",
         "tags": "SirepRAT, pentest-monkey shell, Netcat Binary",
         "date": "2020-08-24 00:00:00 +0000",
         "snippet": "Introduction@Omni:~$ Column Details Name Omni IP 10.10.10.204 Points 20 Os Other Difficulty Easy Creator egre55 Out On 22 Aug 2020 Brief@Omni:~$..."
