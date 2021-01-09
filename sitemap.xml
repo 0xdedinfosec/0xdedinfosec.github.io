@@ -1,6 +1,30 @@
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
     <url>
+        <loc>http://0xdedinfosec.github.io/posts/htb-ready/</loc>
+        <lastmod>2020-12-14T15:40:23+00:00</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.5</priority>
+    </url>
+    <url>
+        <loc>http://0xdedinfosec.github.io/posts/htb-luanne/</loc>
+        <lastmod>2020-12-02T15:40:23+00:00</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.5</priority>
+    </url>
+    <url>
+        <loc>http://0xdedinfosec.github.io/posts/htb-crossfit/</loc>
+        <lastmod>2020-11-26T15:40:23+00:00</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.5</priority>
+    </url>
+    <url>
+        <loc>http://0xdedinfosec.github.io/posts/htb-laboratory/</loc>
+        <lastmod>2020-11-21T15:40:23+00:00</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.5</priority>
+    </url>
+    <url>
         <loc>http://0xdedinfosec.github.io/posts/htb-academy/</loc>
         <lastmod>2020-11-11T15:40:23+00:00</lastmod>
         <changefreq>monthly</changefreq>
