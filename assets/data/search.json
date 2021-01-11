@@ -118,5 +118,13 @@
         "tags": "GitLab 11.4.7 Remote Code Execution,POC,Escaping Docker Privileged Containers,Understanding Docker container escapes",
         "date": "2020-12-14 00:00:00 +0000",
         "snippet": "Introduction@Ready:~$ Column Details Name Ready Os Linux Difficulty Medium..."
+    },
+    {
+        "title": "Hackthebox Delivery Writeup",
+        "url": "/posts/htb-delivery/",
+        "categories": "Hackthebox, active",
+        "tags": "OneRuleToRuleThemAll",
+        "date": "2021-01-11 00:00:00 +0000",
+        "snippet": "Introduction@Delivery:~$ Column Details Name Delivery Os Linux Difficulty Easy..."
     }
 ]
