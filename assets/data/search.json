@@ -10,7 +10,7 @@
     {
         "title": "Hackthebox Compromised Writeup",
         "url": "/posts/htb-compromised/",
-        "categories": "Hackthebox, active",
+        "categories": "Hackthebox, retired",
         "tags": "CVE-45267, disable_functions Bypass, pseudoshell, MySQL Backdoor",
         "date": "2020-09-20 00:00:00 +0000",
         "snippet": "Introduction@Compromised:~$ Column Details Name Compromised IP 10.10.10.207 Points 40 Os Linux Difficulty Hard Creator D4nch3n Out On 12 Sept 2020 Brief@Compromised..."
