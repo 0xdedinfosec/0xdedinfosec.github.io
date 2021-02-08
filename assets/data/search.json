@@ -2,7 +2,7 @@
     {
         "title": "Hackthebox Doctor writeup",
         "url": "/posts/htb-doctor/",
-        "categories": "Hackthebox, active",
+        "categories": "Hackthebox, retired",
         "tags": "CVE, Server-Side Template Injection, PySplunkWhisperer2_remote.py, LinPEAS",
         "date": "2020-09-28 00:00:00 +0000",
         "snippet": "Introduction@Doctor:~$ Column Details Name Doctor IP 10.10.10.209 Points 20 Os Linux Difficulty Easy Creator egotisticalSW Out On 26 Sept 2020 ..."
