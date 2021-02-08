@@ -133,6 +133,14 @@
         "categories": "Hackthebox, active",
         "tags": "GitTools,Cross-site Scripting,The JSON Web Token Toolkit v2,Shell.aspx,GraphQL APIs",
         "date": "2021-01-11 00:00:00 +0000",
-        "snippet": "Introduction@Delivery:~$ Column Details Name Delivery Os Linux Difficulty Easy..."
+        "snippet": "Introduction@Cereal:~$ Column Details Name Cereal Os Linux Difficulty Hard..."
+    },
+    {
+        "title": "Hackthebox Tenet Writeup",
+        "url": "/posts/htb-tenet/",
+        "categories": "Hackthebox, active",
+        "tags": "Recursively copy/backup all,Exploiting PHP deserialization",
+        "date": "2021-02-08 00:00:00 +0000",
+        "snippet": "Introduction@Tenet:~$ Column Details Name Tenet Os Linux Difficulty Easy..."
     }
 ]
