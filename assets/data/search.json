@@ -58,7 +58,7 @@
     {
         "title": "Hackthebox Jewel Writeup",
         "url": "/posts/htb-jewel/",
-        "categories": "Hackthebox, active",
+        "categories": "Hackthebox, retired",
         "tags": "Ruby on Rails,LinPEAS,Google GAuth Authenticator,GTFOBins",
         "date": "2020-10-29 00:00:00 +0000",
         "snippet": "Introduction@Jewel:~$ Column Details Name Jewel Os Linux Difficulty Medium..."
