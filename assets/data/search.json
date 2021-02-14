@@ -142,5 +142,13 @@
         "tags": "Recursively copy/backup all,Exploiting PHP deserialization",
         "date": "2021-02-08 00:00:00 +0000",
         "snippet": "Introduction@Tenet:~$ Column Details Name Tenet Os Linux Difficulty Easy..."
+    },
+    {
+        "title": "Hackthebox Sink Writeup",
+        "url": "/posts/htb-sink/",
+        "categories": "Hackthebox, active",
+        "tags": "HAProxy HTTP request smuggling,CVE-2019-18277,Cookie-Editor,CyberChef",
+        "date": "2021-02-14 00:00:00 +0000",
+        "snippet": "Introduction@Sink:~$ Column Details Name Sink Os Linux Difficulty Insane..."
     }
 ]
