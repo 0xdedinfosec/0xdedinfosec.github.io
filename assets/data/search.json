@@ -34,7 +34,7 @@
     {
         "title": "Hackthebox Feline Writeup",
         "url": "/posts/htb-feline/",
-        "categories": "Hackthebox, active",
+        "categories": "Hackthebox, retired",
         "tags": "CVE-2020-9484, java.lang.Runtime.exec(), CVE-2020-11651, Public Exploit for CVE-2020-11651, Docker.sock Abusing",
         "date": "2020-09-01 00:00:00 +0000",
         "snippet": "Introduction@Feline:~$ Column Details Name Feline IP 10.10.10.205 Points 40 Os Linux Difficulty Hard Creator MinatoTW & MrR3boot Out On 29 Aug 2020..."
