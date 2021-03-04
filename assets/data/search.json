@@ -158,5 +158,13 @@
         "tags": "msfvenom APK Template Command Injection,CVE-2020-7384",
         "date": "2021-02-17 00:00:00 +0000",
         "snippet": "Introduction@ScriptKiddie:~$ Column Details Name ScriptKiddie Os Linux Difficulty Easy..."
+    },
+    {
+        "title": "Hackthebox Spectra Writeup",
+        "url": "/posts/htb-spectra/",
+        "categories": "Hackthebox, active",
+        "tags": "WordPress Reverse Shell,SUDO Privileges at initctl",
+        "date": "2021-03-04 00:00:00 +0000",
+        "snippet": "Introduction@Spectra:~$ Column Details Name Spectra Os Linux Difficulty Easy..."
     }
 ]
