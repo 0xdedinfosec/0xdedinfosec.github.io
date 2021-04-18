@@ -174,5 +174,13 @@
         "tags": "Drupal Drupalgeddon 2 Forms API Property Injection,Privilege Escalation in Ubuntu Linux,dirty_sock",
         "date": "2021-03-29 00:00:00 +0000",
         "snippet": "Introduction@Armageddon:~$ Column Details Name Armageddon Os Linux Difficulty Easy..."
+    },
+    {
+        "title": "Hackthebox Unobtainium Writeup",
+        "url": "/posts/htb-unobtainium/",
+        "categories": "Hackthebox, active",
+        "tags": "Prototype Pollution,Command Injection,Install kubectl binary with curl on Linux,Chisel,Bad Pod,everything-allowed-exec-pod.yaml,everything-allowed-revshell-pod.yaml",
+        "date": "2021-03-18 00:00:00 +0000",
+        "snippet": "Introduction@Unobtainium:~$ Column Details Name Unobtainium Os Linux Difficulty Hard..."
     }
 ]
