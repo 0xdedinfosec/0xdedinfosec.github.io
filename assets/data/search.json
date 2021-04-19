@@ -182,5 +182,13 @@
         "tags": "Prototype Pollution,Command Injection,Install kubectl binary with curl on Linux,Chisel,Bad Pod,everything-allowed-exec-pod.yaml,everything-allowed-revshell-pod.yaml",
         "date": "2021-03-18 00:00:00 +0000",
         "snippet": "Introduction@Unobtainium:~$ Column Details Name Unobtainium Os Linux Difficulty Hard..."
+    },
+    {
+        "title": "Hackthebox Atom Writeup",
+        "url": "/posts/htb-atom/",
+        "categories": "Hackthebox, active",
+        "tags": "Signature Validation Bypass,winPEASx64.exe,redis_cheatsheet,PortableKanban Encrypted Password Disclosure,Python3 Script",
+        "date": "2021-03-19 00:00:00 +0000",
+        "snippet": "Introduction@Atom:~$ Column Details Name Atom Os Windows Difficulty Medium..."
     }
 ]
