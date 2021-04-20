@@ -66,7 +66,7 @@
     {
         "title": "Hackthebox Time Writeup",
         "url": "/posts/htb-time/",
-        "categories": "Hackthebox, active",
+        "categories": "Hackthebox, retired",
         "tags": "Jackson Deserialization,com fasterxml jackson,CVE-2019-12384,LinPEAS,stackoverflow",
         "date": "2020-10-30 00:00:00 +0000",
         "snippet": "Introduction@Time:~$ Column Details Name Time Os Linux Difficulty Medium..."
@@ -90,7 +90,7 @@
     {
         "title": "Hackthebox Laboratory Writeup",
         "url": "/posts/htb-laboratory/",
-        "categories": "Hackthebox, active",
+        "categories": "Hackthebox, retired",
         "tags": "reset your root password,Linux Privilege Escalation Using PATH Variable,gitlab-rails console",
         "date": "2020-11-21 00:00:00 +0000",
         "snippet": "Introduction@Academy:~$ Column Details Name Laboratory Os Linux Difficulty Easy..."
@@ -98,7 +98,7 @@
     {
         "title": "Hackthebox Crossfit Writeup",
         "url": "/posts/htb-crossfit/",
-        "categories": "Hackthebox, active",
+        "categories": "Hackthebox, retired",
         "tags": "Create a HTTP Request in JS,escapeArgs option is not working properly,pspy64,LinPEAS,john",
         "date": "2020-11-26 00:00:00 +0000",
         "snippet": "Introduction@Crossfit:~$ Column Details Name Crossfit Os Linux Difficulty Insane..."
@@ -106,7 +106,7 @@
     {
         "title": "Hackthebox Luanne Writeup",
         "url": "/posts/htb-luanne/",
-        "categories": "Hackthebox, active",
+        "categories": "Hackthebox, retired",
         "tags": "lua,mkfifo,OpenBSD manual page server,doas,john",
         "date": "2020-12-02 00:00:00 +0000",
         "snippet": "Introduction@Luanne:~$ Column Details Name Luanne Os Other Difficulty Easy..."
