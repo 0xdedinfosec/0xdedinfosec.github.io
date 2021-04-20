@@ -42,7 +42,7 @@
     {
         "title": "Hackthebox Passage Writeup",
         "url": "/posts/htb-passage/",
-        "categories": "Hackthebox, active",
+        "categories": "Hackthebox, retired",
         "tags": "CVE-37474, CuteNews 2.0.3 - Arbitrary File Upload, Dbus–USBCreator–Priviesc",
         "date": "2020-09-07 00:00:00 +0000",
         "snippet": "Introduction@Passage:~$ Column Details Name Passage IP 10.10.10.206 Points 30 Os Linux Difficulty Medium Creator ChefByzen Out On 05 Sep 2020..."
@@ -50,7 +50,7 @@
     {
         "title": "Hackthebox Reel2 Writeup",
         "url": "/posts/htb-reel2/",
-        "categories": "Hackthebox, active",
+        "categories": "Hackthebox, retired",
         "tags": "SprayingToolkit,NetNTLMv2 hash stealing using Outlook,Example hashes,behavior of Out-Default",
         "date": "2020-10-11 00:00:00 +0000",
         "snippet": "Introduction@Reel2:~$ Column Details Name Reel2 Os Windows Difficulty Hard..."
