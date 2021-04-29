@@ -180,7 +180,7 @@
         "url": "/posts/htb-unobtainium/",
         "categories": "Hackthebox, active",
         "tags": "Prototype Pollution,Command Injection,Install kubectl binary with curl on Linux,Chisel,Bad Pod,everything-allowed-exec-pod.yaml,everything-allowed-revshell-pod.yaml",
-        "date": "2021-03-18 00:00:00 +0000",
+        "date": "2021-04-18 00:00:00 +0000",
         "snippet": "Introduction@Unobtainium:~$ Column Details Name Unobtainium Os Linux Difficulty Hard..."
     },
     {
@@ -188,7 +188,15 @@
         "url": "/posts/htb-atom/",
         "categories": "Hackthebox, active",
         "tags": "Signature Validation Bypass,winPEASx64.exe,redis_cheatsheet,PortableKanban Encrypted Password Disclosure,Python3 Script",
-        "date": "2021-03-19 00:00:00 +0000",
+        "date": "2021-04-19 00:00:00 +0000",
         "snippet": "Introduction@Atom:~$ Column Details Name Atom Os Windows Difficulty Medium..."
+    },
+    {
+        "title": "Hackthebox Monitors Writeup",
+        "url": "/posts/htb-monitors/",
+        "categories": "Hackthebox, active",
+        "tags": "WordPress Plugin WP with Spritz 1.0,LFI to RCE,CVE-2020-14295,Apache OFBiz XML-RPC Java Deserialization,Abusing SYS_MODULE capability",
+        "date": "2021-04-29 00:00:00 +0000",
+        "snippet": "Introduction@Monitors:~$ Column Details Name Monitors Os Linux Difficulty Hard..."
     }
 ]
