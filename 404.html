@@ -204,16 +204,13 @@
                 </script>
             </span>
             <span class="icon-border"></span>
-            <a href="https://www.hackthebox.eu/home/users/profile/262485" target="_blank">
-</i><i class="fas fa-cube"></i>
-</a>
-<a href="https://github.com/0xdedinfosec" target="_blank">
+            <a href="https://github.com/0xdedinfosec" target="_blank">
     <i class="fab fa-github"></i>
 </a>
-<a href="https://t.me/joinchat/IqX5bYDCFWo9Z0c7">
+<a href="https://t.me/Dedinfosec" target="_blank">
     <i class="fab fa-telegram"></i>
 </a>
-<a href="https://twitter.com/0xdedinfosec">
+<a href="https://twitter.com/0xdedinfosec" target="_blank">
     <i class="fab fa-twitter"></i>
 </a>
 <a href="https://www.facebook.com/dedsecinfoServices/" target="_blank"> <i class="fab fa-facebook"></i> </a>
@@ -288,7 +285,7 @@
                 <div class="footer-left">
 </p></div>
 <p class="mb-0">
-    © 2020 <a href="https://www.facebook.com/dedsecinfoServices/">Dedinfosec</a>
+    © <span id="year"></span> <a href="https://www.facebook.com/dedsecinfoServices/">Dedinfosec</a>
     . <span data-toggle="tooltip" data-placement="top" title="The blog posts on this site are licensed under the Creative Commons Attribution 4.0 International (CC BY 4.0) License.">All rights reserved.</span>
     <script>
         (function(i, s, o, g, r, a, m) {
@@ -351,4 +348,9 @@
         searchResultTemplate: '<div class="pl-1 pr-1 pl-sm-2 pr-sm-2 pl-lg-4 pr-lg-4 pl-xl-0 pr-xl-0"> <a href="https://0xdedinfosec.github.io{url}">{title}</a><div class="post-meta d-flex flex-column flex-sm-row text-muted mt-1 mb-1"><div class="mr-sm-4"><i class="far fa-folder fa-fw"></i>{categories}</div><div><i class="fa fa-tag fa-fw"></i>{tags}</div></div><p>{snippet}</p></div>',
         noResultsText: '<p class="mt-5">Oops! No result founds.</p>'
     });
+</script>
+<script>
+        $(document).ready(function(){
+            $('#year').text(new Date().getFullYear());
+        });
 </script>
