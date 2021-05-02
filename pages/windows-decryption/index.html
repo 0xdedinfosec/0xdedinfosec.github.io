@@ -837,7 +837,7 @@ Administrator:500:aad3b435b51404eeaad3b435b51404ee:<span class="nf">d9485863c1b9
                         </p>
                     </div>
                     <p class="mb-0">
-                        © 2020 <a href="https://www.facebook.com/dedsecinfoServices/">Dedinfosec</a>
+                        © <span id="year"></span> <a href="https://www.facebook.com/dedsecinfoServices/">Dedinfosec</a>
                         . <span data-toggle="tooltip" data-placement="top"
                             title="The blog posts on this site are licensed under the Creative Commons Attribution 4.0 International (CC BY 4.0) License.">All
                             rights reserved.</span>
@@ -905,3 +905,8 @@ Administrator:500:aad3b435b51404eeaad3b435b51404ee:<span class="nf">d9485863c1b9
             noResultsText: '<p class="mt-5">Oops! No result founds.</p>'
         });
     </script>
+<script>
+        $(document).ready(function(){
+            $('#year').text(new Date().getFullYear());
+        });
+</script>
