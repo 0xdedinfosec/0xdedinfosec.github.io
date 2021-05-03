@@ -198,5 +198,13 @@
         "tags": "WordPress Plugin WP with Spritz 1.0,LFI to RCE,CVE-2020-14295,Apache OFBiz XML-RPC Java Deserialization,Abusing SYS_MODULE capability",
         "date": "2021-04-29 00:00:00 +0000",
         "snippet": "Introduction@Monitors:~$ Column Details Name Monitors Os Linux Difficulty Hard..."
+    },
+    {
+        "title": "Hackthebox Love Writeup",
+        "url": "/posts/htb-love/",
+        "categories": "Hackthebox, active",
+        "tags": "Voting System 1.0 - File Upload RCE,php_reverse_shell_mini.php,Always Install Elevated",
+        "date": "2021-05-03 00:00:00 +0000",
+        "snippet": "Introduction@Love:~$ Column Details Name Love Os Windows Difficulty Easy..."
     }
 ]
