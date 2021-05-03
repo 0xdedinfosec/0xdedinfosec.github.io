@@ -84,31 +84,27 @@
     <div id="particles-js">
         <div class="login-box">
             <h1>Hackthebox Love Writeup</h1>
-                      <p><p><img alt="" src="https://0xdedinfosec.github.io/hackthebox/love/love.png" style="height:182px; width:300px" /></p>
-          
-          <p>This Machine is Currently Active</p>
-          
-          <p>Since HTB is using flag rotation</p>
-          
-          <p>Enter the root-password hash from the file /etc/shadow</p>
-          
-          <p>aab*******************************cf1</p>
-          
-          <p>Go back to&nbsp;&nbsp;<a href="http://0xdedinfosec.github.io/">0xDedinfosec/Home</a></p>
+            <p>
+            <p>
+                <img alt="" src="https://0xdedinfosec.github.io/hackthebox/love/love.png" style="height:182px; width:300px"/>
+            </p>
+            <p>This Machine is Currently Active</p>
+            <p>Decrypt it with NTLM hash of user administrator</p>
+            <p>
+                Use msf hashdump or follow to get the hash &nbsp;<a href="http://0xdedinfosec.github.io/pages/windows-decryption/">Dumping-Hash</a>
+            </p>
+            <p>aab****************************cf1</p>
+            <p>
+                Go back to &nbsp;&nbsp;<a href="http://0xdedinfosec.github.io/">0xDedinfosec/Home</a>
+            </p>
             <div class="textbox">
-              <i class="fas fa-lock"></i>
-              <form id="staticrypt-form" action="#" method="post">
-              <input id="staticrypt-password"
-                             type="password"
-                             name="password"
-                             placeholder="Root-Hash"
-                             autofocus/>
+                <i class="fas fa-lock"></i>
+                <form id="staticrypt-form" action="#" method="post">
+                    <input id="staticrypt-password" type="password" name="password" placeholder="NTLM-Hash" autofocus/>
             </div>
-          
             <input type="submit" class="btn" value="DECRYPT"/>
-            </form>
-          </div>
-              </div>
+</form></div>
+        </div>
 
         <script src="/assets/js/particles.js"></script>
         <script src="/assets/js/app.js"></script>
