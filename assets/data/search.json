@@ -206,5 +206,13 @@
         "tags": "Voting System 1.0 - File Upload RCE,php_reverse_shell_mini.php,Always Install Elevated",
         "date": "2021-05-03 00:00:00 +0000",
         "snippet": "Introduction@Love:~$ Column Details Name Love Os Windows Difficulty Easy..."
+    },
+    {
+        "title": "Hackthebox Pivotapi Writeup",
+        "url": "/posts/htb-pivotapi/",
+        "categories": "Hackthebox, active",
+        "tags": "CMD Watcher,API Monitor,PrintSpoofer,Mssql_Shell.py",
+        "date": "2021-05-15 00:00:00 +0000",
+        "snippet": "Introduction@Pivotapi:~$ Column Details Name Pivotapi Os Windows Difficulty Insane..."
     }
 ]
