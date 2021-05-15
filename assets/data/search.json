@@ -114,7 +114,7 @@
     {
         "title": "Hackthebox Ready Writeup",
         "url": "/posts/htb-ready/",
-        "categories": "Hackthebox, active",
+        "categories": "Hackthebox, retired",
         "tags": "GitLab 11.4.7 Remote Code Execution,POC,Escaping Docker Privileged Containers,Understanding Docker container escapes",
         "date": "2020-12-14 00:00:00 +0000",
         "snippet": "Introduction@Ready:~$ Column Details Name Ready Os Linux Difficulty Medium..."
