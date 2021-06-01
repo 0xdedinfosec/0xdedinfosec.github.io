@@ -1,0 +1,13 @@
+#an_button{
+    color: white;
+    background-color: rgb(27, 27, 30);
+}
+
+#an_button:hover{
+    cursor: pointer;
+    background-color: rgb(27, 27, 30);
+}
+
+#access-lastmod .fa-lock-open:hover:before {
+    content: "\f023"
+}
