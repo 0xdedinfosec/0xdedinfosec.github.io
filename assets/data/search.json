@@ -222,5 +222,13 @@
         "tags": "PHP 8.1.0-dev development version backdoor",
         "date": "2021-05-23 00:00:00 +0000",
         "snippet": "Introduction@Knife:~$ Column Details Name Knife Os Linux Difficulty Easy..."
+    },
+    {
+        "title": "Hackthebox Spider Writeup",
+        "url": "/posts/htb-spider/",
+        "categories": "Hackthebox, active",
+        "tags": "Server Side Template Injection Payloads,XXE Cheatsheet",
+        "date": "2021-06-01 00:00:00 +0000",
+        "snippet": "Introduction@Spider:~$ Column Details Name Spider Os Linux Difficulty Hard..."
     }
 ]
