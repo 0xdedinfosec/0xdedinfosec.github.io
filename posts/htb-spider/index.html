@@ -6142,8 +6142,8 @@
             }
                 var plainHTML = decrypt(encryptedHTML, passphrase);
                 // console.log(passphrase);
-                document.write(plainHTML);
                 localStorage.setItem('spider', passphrase);
+                document.write(plainHTML);
                 document.close();
         });
         var passphrase = document.getElementById('staticrypt-password').value,
