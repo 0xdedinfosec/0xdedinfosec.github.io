@@ -1,4 +1,7 @@
 document.getElementById("Recent-Updates").innerHTML = `<li>
+<a href="/posts/htb-spider/">Hackthebox Spider writeup</a>
+</li>
+<li>
 <a href="/posts/htb-knife/">Hackthebox Knife writeup</a>
 </li>
 <li>
@@ -9,7 +12,4 @@ document.getElementById("Recent-Updates").innerHTML = `<li>
 </li>
 <li>
 <a href="/posts/htb-sink/">Hackthebox Sink writeup</a>
-</li>
-<li>
-<a href="/posts/htb-tenet/">Hackthebox Tenet writeup</a>
 </li>`
