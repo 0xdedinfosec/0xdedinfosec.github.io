@@ -17,7 +17,7 @@ function HackTheBox_posts() {
 }
 
 
-//Active Posts
+//All Active Posts
 
 function Active_posts() {
     var active_arr = ["Spider", "Knife", "Pivotapi", "Love", "Monitors", "Atom", "Unobtainium", "Armageddon", "Spectra", "Scriptkiddie", "Sink", "Tenet"];
@@ -35,6 +35,9 @@ function Active_posts() {
     document.getElementById("post_lenght_active").innerHTML = active_arr.length;
     document.getElementById("post_content_active").innerHTML = output_Active_HTML;
 }
+
+
+//All Retired Posts
 
 function Retired_posts() {
     var retired_arr = ["Cereal", "Delivery", "Ready", "Launne", "Crossfit", "Laboratory", "Academy", "Bucket", "Time", "Jewel", "Reel2", "Doctor", "Compromised", "Passage", "Feline", "Omni", "Sneakymailer"];
