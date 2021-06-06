@@ -230,5 +230,13 @@
         "tags": "Server Side Template Injection Payloads,XXE Cheatsheet",
         "date": "2021-06-01 00:00:00 +0000",
         "snippet": "Introduction@Spider:~$ Column Details Name Spider Os Linux Difficulty Hard..."
+    },
+    {
+        "title": "Hackthebox Cap Writeup",
+        "url": "/posts/htb-cap/",
+        "categories": "Hackthebox, active",
+        "tags": "",
+        "date": "2021-06-06 00:00:00 +0000",
+        "snippet": "Introduction@Cap:~$ Column Details Name Cap Os Linux Difficulty Easy..."
     }
 ]
