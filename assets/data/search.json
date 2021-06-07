@@ -154,7 +154,7 @@
     {
         "title": "Hackthebox ScriptKiddie Writeup",
         "url": "/posts/htb-scriptkiddie/",
-        "categories": "Hackthebox, active",
+        "categories": "Hackthebox, retired",
         "tags": "msfvenom APK Template Command Injection,CVE-2020-7384",
         "date": "2021-02-17 00:00:00 +0000",
         "snippet": "Introduction@ScriptKiddie:~$ Column Details Name ScriptKiddie Os Linux Difficulty Easy..."
