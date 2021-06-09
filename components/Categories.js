@@ -1,15 +1,9 @@
-const hackthebox_arr = ["Cap","Spider", "Knife", "Pivotapi", "Love", "Monitors", "Atom", "Unobtainium", "Armageddon", "Spectra", "Scriptkiddie", "Sink", "Tenet", "Cereal", "Delivery", "Ready", "Launne", "Crossfit", "Laboratory", "Academy", "Bucket", "Time", "Jewel", "Reel2", "Doctor", "Compromised", "Passage", "Feline", "Omni", "Sneakymailer"];
-const hackthebox_date_arr = ["Jun 06, 2021","Jun 01, 2021", "May 23, 2021", "May 15, 2021", "May 03, 2021", "Apr 29, 2021", "Apr 19, 2021", "Apr 18, 2021", "Mar 29, 2021", "Mar 04, 2021", "Feb 17, 2021", "Feb 14, 2021", "Feb 08, 2021", "Jan 27, 2021", "Jan 11, 2021", "Dec 14, 2020", "Dec 2, 2020", "Nov 26, 2020", "Nov 21, 2020", "Nov 11, 2020", "Nov 08, 2020", "Oct 30, 2020", "Oct 29, 2020", "Oct 05, 2020", "Sep 28, 2020", "Sep 20, 2020", "Sep 07, 2020", "Sep 01, 2020", "Aug 24, 2020", "Jul 12, 2020"];
-
-const active_arr = ["Cap","Spider", "Knife", "Pivotapi", "Love", "Monitors", "Atom", "Unobtainium", "Armageddon", "Spectra", "Sink", "Tenet"];
-const active_date_arr = ["Jun 06, 2021","Jun 01, 2021", "May 23, 2021", "May 15, 2021", "May 03, 2021", "Apr 29, 2021", "Apr 19, 2021", "Apr 18, 2021", "Mar 29, 2021", "Mar 04, 2021", "Feb 14, 2021", "Feb 08, 2021"];
-
-const retired_arr = ["Scriptkiddie","Cereal", "Delivery", "Ready", "Launne", "Crossfit", "Laboratory", "Academy", "Bucket", "Time", "Jewel", "Reel2", "Doctor", "Compromised", "Passage", "Feline", "Omni", "Sneakymailer"];
-const retired_date_arr = ["Feb 17, 2021","Jan 27, 2021", "Jan 11, 2021", "Dec 14, 2020", "Dec 2, 2020", "Nov 26, 2020", "Nov 21, 2020", "Nov 11, 2020", "Nov 08, 2020", "Oct 30, 2020", "Oct 29, 2020", "Oct 05, 2020", "Sep 28, 2020", "Sep 20, 2020", "Sep 07, 2020", "Sep 01, 2020", "Aug 24, 2020", "Jul 12, 2020"];
+import { hackthebox_arr, hackthebox_date_arr, active_arr, active_date_arr, retired_arr, retired_date_arr } from './Variable.js';
 
 //All HackTheBox Posts
-function HackTheBox_posts() {
+export function HackTheBox_posts() {
     var output_Hackthebox_HTML = "";
+
     for (var i = 0, hackthebox_arr_size = hackthebox_arr.length; i < hackthebox_arr_size; i++) {
         output_Hackthebox_HTML += `<li class="d-flex justify-content-between pl-md-3 pr-md-3">\n`
         output_Hackthebox_HTML += `<a href="https://0xdedinfosec.github.io/posts/htb-${hackthebox_arr[i].toLowerCase()}/">Hackthebox ${hackthebox_arr[i]} writeup</a>\n`
@@ -23,8 +17,9 @@ function HackTheBox_posts() {
 }
 
 
-//All Active Posts
-function Active_posts() {
+//Active Posts
+
+export function Active_posts() {
     var output_Active_HTML = "";
 
     for (var i = 0, active_arr_size = active_arr.length; i < active_arr_size; i++) {
@@ -39,9 +34,7 @@ function Active_posts() {
     document.getElementById("post_content_active").innerHTML = output_Active_HTML;
 }
 
-
-//All Retired Posts
-function Retired_posts() {
+export function Retired_posts() {
     var output_Retired_HTML = "";
 
     for (var i = 0, retired_arr_size = retired_arr.length; i < retired_arr_size; i++) {
@@ -56,7 +49,7 @@ function Retired_posts() {
     document.getElementById("post_content_retired").innerHTML = output_Retired_HTML;
 }
 
-function Categories_lenght(){
+export function Categories_lenght() {
     document.getElementById("hackthebox_lenght").innerHTML = `2 categories, ${hackthebox_arr.length} posts`;
     document.getElementById("active_lenght").innerHTML = `${active_arr.length} posts`;
     document.getElementById("retired_lenght").innerHTML = `${retired_arr.length} posts`;
