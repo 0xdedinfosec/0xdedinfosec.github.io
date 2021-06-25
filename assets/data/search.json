@@ -238,5 +238,13 @@
         "tags": "",
         "date": "2021-06-06 00:00:00 +0000",
         "snippet": "Introduction@Cap:~$ Column Details Name Cap Os Linux Difficulty Easy..."
+    },
+    {
+        "title": "Hackthebox Static Writeup",
+        "url": "/posts/htb-static/",
+        "categories": "Hackthebox, active",
+        "tags": "Fixgz,Authenticator,xdebug Unauthenticated,PHP-FPM Remote Code Execution,PHP-FPM Remote Code Execution,PoC CVE-2019-11043,nc,how to download a file using just bash,pspy64s,PATH Variable",
+        "date": "2021-06-25 00:00:00 +0000",
+        "snippet": "Introduction@Static:~$ Column Details Name Static Os Linux Difficulty Hard..."
     }
 ]
