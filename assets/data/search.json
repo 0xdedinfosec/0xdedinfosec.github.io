@@ -246,5 +246,13 @@
         "tags": "Fixgz,Authenticator,xdebug Unauthenticated,PHP-FPM Remote Code Execution,PHP-FPM Remote Code Execution,PoC CVE-2019-11043,nc,how to download a file using just bash,pspy64s,PATH Variable",
         "date": "2021-06-25 00:00:00 +0000",
         "snippet": "Introduction@Static:~$ Column Details Name Static Os Linux Difficulty Hard..."
+    },
+    {
+        "title": "Hackthebox Horizontall Writeup",
+        "url": "/posts/htb-horizontall/",
+        "categories": "Hackthebox, active",
+        "tags": "Exploiting friends with CVE-2019-18818,Strapi Framework Vulnerable to Remote Code Execution,LARAVEL <= V8.4.2 DEBUG MODE: REMOTE CODE EXECUTION,CVE-2021-3129 POC,CVE-2021-3129_exploit",
+        "date": "2021-08-31 00:00:00 +0000",
+        "snippet": "Introduction@Horizontall:~$ Column Details Name Horizontall Os Linux Difficulty Easy..."
     }
 ]
