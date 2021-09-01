@@ -162,7 +162,7 @@
     {
         "title": "Hackthebox Spectra Writeup",
         "url": "/posts/htb-spectra/",
-        "categories": "Hackthebox, active",
+        "categories": "Hackthebox, retired",
         "tags": "WordPress Reverse Shell,SUDO Privileges at initctl",
         "date": "2021-03-04 00:00:00 +0000",
         "snippet": "Introduction@Spectra:~$ Column Details Name Spectra Os Linux Difficulty Easy..."
@@ -170,7 +170,7 @@
     {
         "title": "Hackthebox armageddon Writeup",
         "url": "/posts/htb-armageddon/",
-        "categories": "Hackthebox, active",
+        "categories": "Hackthebox, retired",
         "tags": "Drupal Drupalgeddon 2 Forms API Property Injection,Privilege Escalation in Ubuntu Linux,dirty_sock",
         "date": "2021-03-29 00:00:00 +0000",
         "snippet": "Introduction@Armageddon:~$ Column Details Name Armageddon Os Linux Difficulty Easy..."
@@ -186,7 +186,7 @@
     {
         "title": "Hackthebox Atom Writeup",
         "url": "/posts/htb-atom/",
-        "categories": "Hackthebox, active",
+        "categories": "Hackthebox, retired",
         "tags": "Signature Validation Bypass,winPEASx64.exe,redis_cheatsheet,PortableKanban Encrypted Password Disclosure,Python3 Script",
         "date": "2021-04-19 00:00:00 +0000",
         "snippet": "Introduction@Atom:~$ Column Details Name Atom Os Windows Difficulty Medium..."
@@ -202,7 +202,7 @@
     {
         "title": "Hackthebox Love Writeup",
         "url": "/posts/htb-love/",
-        "categories": "Hackthebox, active",
+        "categories": "Hackthebox, retired",
         "tags": "Voting System 1.0 - File Upload RCE,php_reverse_shell_mini.php,Always Install Elevated",
         "date": "2021-05-03 00:00:00 +0000",
         "snippet": "Introduction@Love:~$ Column Details Name Love Os Windows Difficulty Easy..."
@@ -218,7 +218,7 @@
     {
         "title": "Hackthebox Knife Writeup",
         "url": "/posts/htb-knife/",
-        "categories": "Hackthebox, active",
+        "categories": "Hackthebox, retired",
         "tags": "PHP 8.1.0-dev development version backdoor",
         "date": "2021-05-23 00:00:00 +0000",
         "snippet": "Introduction@Knife:~$ Column Details Name Knife Os Linux Difficulty Easy..."
