@@ -1,5 +1,6 @@
 User-agent: *
 
 Disallow: /norobots/
+Disallow: /manifest.json/
 
 Sitemap: https://0xdedinfosec.github.io/sitemap.xml
