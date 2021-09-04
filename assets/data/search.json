@@ -51,7 +51,7 @@
         "title": "Hackthebox Reel2 Writeup",
         "url": "/posts/htb-reel2/",
         "categories": "Hackthebox, retired",
-        "tags": "SprayingToolkit,NetNTLMv2 hash stealing using Outlook,Example hashes,behavior of Out-Default",
+        "tags": "SprayingToolkit,NetNTLMv2_hash stealing using Outlook,Example_hashes,behavior of Out-Default",
         "date": "2020-10-11 00:00:00 +0000",
         "snippet": "Introduction@Reel2:~$ Column Details Name Reel2 Os Windows Difficulty Hard..."
     },
@@ -178,7 +178,7 @@
     {
         "title": "Hackthebox Unobtainium Writeup",
         "url": "/posts/htb-unobtainium/",
-        "categories": "Hackthebox, active",
+        "categories": "Hackthebox, retired",
         "tags": "Prototype Pollution,Command Injection,Install kubectl binary with curl on Linux,Chisel,Bad Pod,everything-allowed-exec-pod.yaml,everything-allowed-revshell-pod.yaml",
         "date": "2021-04-18 00:00:00 +0000",
         "snippet": "Introduction@Unobtainium:~$ Column Details Name Unobtainium Os Linux Difficulty Hard..."
