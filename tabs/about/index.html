@@ -54,6 +54,50 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha256-5+02zu5UULQkO7w1GIr6vftCgMfFdZcAHeDtFnKZsBs=" crossorigin="anonymous" async></script>
 <script src="/assets/js/dist/commons.js" async></script>
 <script src="/assets/js/dist/tooltip-loader.min.js" async></script>
+<style>
+    #portfolio{
+  position: relative;
+  display: inline-flex;
+  width: 180px;
+  height: 55px;
+  margin: 0 15px;
+  perspective: 1000px;
+}
+#portfolio a{
+  font-size: 19px;
+  letter-spacing: 1px;
+  transform-style: preserve-3d;
+  transform: translateZ(-25px);
+  transition: transform .25s;
+  font-family: 'Montserrat', sans-serif;
+  
+}
+#portfolio a:before,
+#portfolio a:after{
+  position: absolute;
+  content: "PORTFOLIO";
+  height: 55px;
+  width: 180px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 5px solid black;
+  box-sizing: border-box;
+  border-radius: 5px;
+}
+#portfolio a:before{
+  color: #fff;
+  background: rgb(27, 27, 30);
+  transform: rotateY(0deg) translateZ(25px);
+}
+#portfolio a:after{
+  color: #000;
+  transform: rotateX(90deg) translateZ(25px);
+}
+#portfolio a:hover{
+  transform: translateZ(-25px) rotateX(-90deg);
+}
+</style>
 <body data-spy="scroll" data-target="#toc">
     <div id="sidebar" class="d-flex flex-column">
         <div id="nav-wrapper">
@@ -239,6 +283,8 @@
                                 <script src="/typewritter/script.js"></script>
                             </div>
                         </div>
+                        <br>
+                        <center><span id="portfolio"><a href="../portfolio/"></a></span></center>
                         <br>
                             <br>
                             <a class="twitter-timeline" data-height="689" data-theme="dark" data-chrome="transparent nofooter noborders noheader noscrollbar"
