@@ -378,21 +378,21 @@
         <li>Port <code>80</code> – Apache Web Server.</li>
 
         <h2 class="mt-4 py-3">Port - 80</h2>
-        <img src="/hackthebox/Passage/web.png" id="web" class="py-3" class="py-3" class="width=" 100%" height="528">
+        <img src="/hackthebox/passage/web.png" id="web" class="py-3" class="py-3" class="width=" 100%" height="528">
 
         <hr class="my-4">
 
         <li>News page. There is nothing interesting except a disclosure about<code> NMS (News Management System) Cutenews</code>.</li>
-        <img src="/hackthebox/Passage/web2.png" id="web" class="py-3" class="port" class="py-3" class="width=" 100%" height="280">
+        <img src="/hackthebox/passage/web2.png" id="web" class="py-3" class="port" class="py-3" class="width=" 100%" height="280">
         <hr class="my-4">
 
         <li>From the bottom of the page, we can see this. After some googling, I found that we can visit the NMS panel after placing <code>CuteNews</code> on the web page.</li>
-        <img src="/hackthebox/Passage/web3.png" id="web" class="py-3" class="port" class="width=" 100%" height="588" alt="">
+        <img src="/hackthebox/passage/web3.png" id="web" class="py-3" class="port" class="width=" 100%" height="588" alt="">
 
         <li class="py-3">A Sign-in/Register panel. I quickly signed in.</li>
         <li>But nothing I found useful. Interestingly, I got the version of <code>CuteNews</code> in the same page.</li>
 
-        <img src="/hackthebox/Passage/web4.png" id="web" class="py-3" class="port" class="width=" 100%" height="300" alt="">
+        <img src="/hackthebox/passage/web4.png" id="web" class="py-3" class="port" class="width=" 100%" height="300" alt="">
         <hr class="my-4">
         <h3><code>CVE – Arbitrary File Upload – www-data Shell</code></h3>
 
@@ -403,16 +403,16 @@
         <li>Based on the reference above, we can upload a malicious <code>JPG file containing malicious PHP code in it to cause RCE</code>.</li>
         <li class="py-2">Just like the Magic machine, we can writeup our PHP code inside an image file using the <code>ExifTool</code> tool.</li>
         
-        <img src="/hackthebox/Passage/cmd.jpeg" id="web" class="py-3" class="port" class="width=" 100%" height="200" alt="">
+        <img src="/hackthebox/passage/cmd.jpeg" id="web" class="py-3" class="port" class="width=" 100%" height="200" alt="">
 
         <h5>Important After Adding The Comment Change The File name to <code>dedsec.jpg to change.php</code> or Anything You Want But Extension is <code>.php</code>.</h5>
         <h5 class="py-2">Let’s register an account and upload it to the avatar section.</h5>
 
-        <img src="/hackthebox/Passage/web5.png" id="web" class="py-3" class="port" class="width=" 100%" height="450" alt="">
+        <img src="/hackthebox/passage/web5.png" id="web" class="py-3" class="port" class="width=" 100%" height="450" alt="">
 
         <h5>After saving changes, we can now able to visit the location of our uploaded PHP file.</h5>
 
-        <img src="/hackthebox/Passage/web6.png" id="web" class="py-3" class="port" class="width=" 100%" height="150" alt="">        
+        <img src="/hackthebox/passage/web6.png" id="web" class="py-3" class="port" class="width=" 100%" height="150" alt="">        
 
         <h5>We got the www-data web shell in our Browser</h5>
         <li class="py-2">After Some Enumeration I found that NC is available in machiene.</li>
@@ -450,7 +450,7 @@ passage</span>
                                 <h2 class="py-3"><code>We got our www-data shell</code>.</h2>
                                 <li class="py-2"> there is a lot of <code>PHP files</code> available to read. I saved all the outputs to a single file and copied it to my machine.</li>
 
-                                <img src="/hackthebox/Passage/cmd1.png" id="web" class="py-3" class="port" class="width=" 100%" height="254" alt="">
+                                <img src="/hackthebox/passage/cmd1.png" id="web" class="py-3" class="port" class="width=" 100%" height="254" alt="">
                                 
                                 <li>We got  6 <code>SHA2-256 Hashes</code>. Let’s start Hashcat to crack this against the <code>rockyou.txt</code> file.</li>
                                 <div class="language-bash highlighter-rouge">
@@ -474,7 +474,7 @@ passage</span>
                                 </div>
                                 <li class="py-2">cracked password for two hashes.</li>
 
-                                <img src="/hackthebox/Passage/cmd2.png" id="web" class="py-3" class="port" class="width=" 100%" height="139" alt="">
+                                <img src="/hackthebox/passage/cmd2.png" id="web" class="py-3" class="port" class="width=" 100%" height="139" alt="">
 
                                 <li class="py-2">SSH is not allowed to log in with Password. So I tried to SU into Paul.</li>
                                 <li><code>username : paul</code></li>
@@ -543,7 +543,7 @@ nadav@passage:~$ </span>
                                 <h2><code>Dbus – USB Controller Privilege Escalation – Root:</code></h2>
                                 <li> Listing all the process gave me a hint for Root.</li>
 
-                                <img src="/hackthebox/Passage/cmd3.png" id="web" class="py-3" class="port" class="width=" 100%" height="80" alt="">
+                                <img src="/hackthebox/passage/cmd3.png" id="web" class="py-3" class="port" class="width=" 100%" height="80" alt="">
 
                                 <li class="py-2"><code>Dbus – USBCreator – Priviesc </code> <a href="https://unit42.paloaltonetworks.com/usbcreator-d-bus-privilege-escalation-in-ubuntu-desktop/">https://unit42.paloaltonetworks.com/usbcreator-d-bus-privilege-escalation-in-ubuntu-desktop/</a></li>
 
@@ -554,7 +554,7 @@ nadav@passage:~$ </span>
                                 <li>The user must have executable privileges to the dbus tool.</li>
 
 
-                                <img src="/hackthebox/Passage/cmd4.png" id="web" class="py-3" class="port" class="width=" 100%" height="110" alt="">
+                                <img src="/hackthebox/passage/cmd4.png" id="web" class="py-3" class="port" class="width=" 100%" height="110" alt="">
 
                                 <h5>Okay! We have everything we need. Let’s launch our attack. As we already know the dbus system block as <code>com.ubuntu.USBCreator</code>  by default, we can send a system call to Dbus message.</h5>
 
