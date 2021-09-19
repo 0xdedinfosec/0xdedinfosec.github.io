@@ -56,7 +56,16 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha256-5+02zu5UULQkO7w1GIr6vftCgMfFdZcAHeDtFnKZsBs=" crossorigin="anonymous" async></script>
 <script src="/assets/js/dist/commons.js" async></script>
 <script src="/assets/js/dist/tooltip-loader.min.js" async></script>
+<script src="/assets/js/nanobar.min.js"></script>
 <body data-spy="scroll" data-target="#toc">
+    <div id="top_loading_bar"></div>
+    <script>
+        var options = {
+            id: 'top_loading_bar',
+            target: document.getElementById('myDivId')
+        };
+        var nanobar = new Nanobar( options );
+    </script>
     <div id="sidebar" class="d-flex flex-column">
         <!-- The Side Bar v2.0 https://github.com/cotes2020/jekyll-theme-chirpy © 2017-2019 Cotes Chung MIT License -->
         <div id="nav-wrapper">
@@ -73,6 +82,7 @@
                     <div id="site-subtitle" class="font-italic">InfoSec/Cybersec Blog And Writeups</div>
                 </div>
             </div>
+            <script>nanobar.go(10);</script>
             <ul class="nav flex-column">
                 <li class="nav-item d-flex justify-content-center ">
                     <a href="/" class="nav-link d-flex justify-content-center align-items-center w-100">
@@ -205,6 +215,7 @@
 </a>
 <a href="https://www.facebook.com/dedsecinfoServices/" target="_blank"> <i class="fab fa-facebook"></i> </a>
 </div></div>
+<script>nanobar.go(30);</script>
 <div id="main-wrapper">
     <!-- The Top Bar v2.0 https://github.com/cotes2020/jekyll-theme-chirpy © 2017-2019 Cotes Chung MIT License -->
     <div id="topbar-wrapper" class="row justify-content-center topbar-down">
@@ -243,6 +254,7 @@
                     </div>
                 </div>
             </div>
+            <script>nanobar.go(50);</script>
             <!-- The Pannel on right side (Desktop views) v2.0 https://github.com/cotes2020/jekyll-theme-chirpy © 2017-2019 Cotes Chung MIT License -->
             <div id="panel-wrapper" class="col-xl-3 pl-2 topbar-down">
                 <div class="access">
@@ -267,6 +279,7 @@
             <div class="d-flex justify-content-between align-items-center">
                 <div class="footer-left">
 </p></div>
+<script>nanobar.go(70);</script>
 <p class="mb-0">
     © <span id="year"></span> <a href="https://www.facebook.com/dedsecinfoServices/">Dedinfosec</a>
     . <span data-toggle="tooltip" data-placement="top" title="The blog posts on this site are licensed under the Creative Commons Attribution 4.0 International (CC BY 4.0) License.">All rights reserved.</span>
@@ -339,3 +352,4 @@
 </script>
 <script type="module" src="/components/Update.js"></script>
 <script type="module" src="/components/HackTheBox_posts.js"></script>
+<script>nanobar.go(100);</script>

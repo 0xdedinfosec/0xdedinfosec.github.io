@@ -56,7 +56,16 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha256-5+02zu5UULQkO7w1GIr6vftCgMfFdZcAHeDtFnKZsBs=" crossorigin="anonymous" async></script>
 <script src="/assets/js/dist/commons.js" async></script>
 <script src="/assets/js/dist/tooltip-loader.min.js" async></script>
+<script src="/assets/js/nanobar.min.js"></script>
 <body data-spy="scroll" data-target="#toc">
+    <div id="top_loading_bar"></div>
+    <script>
+        var options = {
+            id: 'top_loading_bar',
+            target: document.getElementById('myDivId')
+        };
+        var nanobar = new Nanobar( options );
+    </script>
     <div id="sidebar" class="d-flex flex-column">
         <!-- The Side Bar v2.0 https://github.com/cotes2020/jekyll-theme-chirpy © 2017-2019 Cotes Chung MIT License -->
         <div id="nav-wrapper">
@@ -66,6 +75,7 @@
                         <img src="/assets/img/sample/avater1.png" alt="avatar">
                     </a>
                 </div>
+                <script>nanobar.go(10);</script>
                 <div class="profile-text mt-3">
                     <div id="site-title">
                         <a href="/">0xDedinfosec</a>
@@ -207,6 +217,7 @@
 </a>
 <a href="https://www.facebook.com/dedsecinfoServices/" target="_blank"> <i class="fab fa-facebook"></i> </a>
 </div></div>
+<script>nanobar.go(30);</script>
 <div id="main-wrapper">
     <!-- The Top Bar v2.0 https://github.com/cotes2020/jekyll-theme-chirpy © 2017-2019 Cotes Chung MIT License -->
     <div id="topbar-wrapper" class="row justify-content-center topbar-down">
@@ -308,6 +319,7 @@
                                         <a href="/posts/htb-atom/">Hackthebox Atom writeup</a>
                                     </div>
                                 </li>
+                                <script>nanobar.go(50);</script>
                                 <li>
                                     <div>
                                         <span class="date day">18</span>
@@ -477,6 +489,7 @@
                     </div>
                 </div>
             </div>
+            <script>nanobar.go(70);</script>
             <!-- The Pannel on right side (Desktop views) v2.0 https://github.com/cotes2020/jekyll-theme-chirpy © 2017-2019 Cotes Chung MIT License -->
             <div id="panel-wrapper" class="col-xl-3 pl-2 topbar-down">
                 <div class="access">
@@ -551,6 +564,7 @@
         <div id="search-results" class="d-flex flex-wrap justify-content-center text-muted mt-3"></div>
     </div>
 </div>
+<script>nanobar.go(90);</script>
 </div><div id="mask"></div>
 <a id="back-to-top" href="#" class="btn btn-lg btn-box-shadow" role="button">
     <i class="fas fa-angle-up"></i>
@@ -572,3 +586,4 @@
         });
 </script>
 <script type="module" src="/components/Update.js"></script>
+<script>nanobar.go(100);</script>

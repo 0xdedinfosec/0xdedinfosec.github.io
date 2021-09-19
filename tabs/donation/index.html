@@ -83,7 +83,16 @@
 <meta name="twitter:description" content="">
 <meta name="twitter:image" content="https://0xdedinfosec.github.io">
 <script src="/assets/js/dist/tooltip-loader.min.js" async></script>
+<script src="/assets/js/nanobar.min.js"></script>
 <body data-spy="scroll" data-target="#toc">
+    <div id="top_loading_bar"></div>
+    <script>
+        var options = {
+            id: 'top_loading_bar',
+            target: document.getElementById('myDivId')
+        };
+        var nanobar = new Nanobar( options );
+    </script>
     <div id="sidebar" class="d-flex flex-column">
         <div id="nav-wrapper">
             <div id="profile-wrapper" class="d-flex flex-column">
@@ -99,6 +108,7 @@
                     <div id="site-subtitle" class="font-italic">InfoSec/Cybersec Blog And Writeups</div>
                 </div>
             </div>
+            <script>nanobar.go(10);</script>
             <ul class="nav flex-column">
                 <li class="nav-item d-flex justify-content-center ">
                     <a href="/" class="nav-link d-flex justify-content-center align-items-center w-100">
@@ -295,6 +305,7 @@
                     </div>
                 </div>
             </div>
+            <script>nanobar.go(50);</script>
             <div id="panel-wrapper" class="col-xl-3 pl-2 topbar-down">
                 <div class="access">
                     <div id="access-lastmod" class="post mb-4">
@@ -353,6 +364,7 @@
   gtag('config', 'G-5LG9K52X15');
 </script>
 <script data-name="BMC-Widget" src="https://cdnjs.buymeacoffee.com/1.0.0/widget.prod.min.js" data-id="DEDINFOSEC88" data-description="Support me on Buy me a coffee!" data-message="Like The Blog? Support Me!" data-color="#FFDD00" data-position="right" data-x_margin="18" data-y_margin="18"></script>
+<script>nanobar.go(70);</script>
 </footer></div>
 <div id="search-result-wrapper" class="d-flex justify-content-center unloaded">
     <div class="col-12 col-xl-11 post-content">
@@ -393,3 +405,4 @@
         });
 </script>
 <script type="module" src="/components/Update.js"></script>
+<script>nanobar.go(100);</script>

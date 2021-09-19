@@ -62,9 +62,18 @@
 
   gtag('config', 'G-5LG9K52X15');
 </script>
+<script src="/assets/js/nanobar.min.js"></script>
 <link rel=”favicon” type=”image/ico” href=”https://0xdedinfosec.github.io/favicon.ico” />
 </head>
 <body data-spy="scroll" data-target="#toc">
+    <div id="top_loading_bar"></div>
+    <script>
+        var options = {
+            id: 'top_loading_bar',
+            target: document.getElementById('myDivId')
+        };
+        var nanobar = new Nanobar( options );
+    </script>
     <div id="sidebar" class="d-flex flex-column">
         <div id="nav-wrapper">
             <div id="profile-wrapper" class="d-flex flex-column">
@@ -213,6 +222,7 @@
 </a>
 <a href="https://www.facebook.com/dedsecinfoServices/" target="_blank"> <i class="fab fa-facebook"></i> </a>
 </div></div>
+<script>nanobar.go(30);</script>
 <div id="main-wrapper">
     <div id="topbar-wrapper" class="row justify-content-center topbar-down">
         <div id="topbar" class="col-11 d-flex h-100 align-items-center justify-content-between">
@@ -320,6 +330,7 @@
                                 </span>
                             </div>
                         </div>
+                        <script>nanobar.go(50);</script>
                         <div class="post-preview">
                             <h1>
                                 <a href="/posts/htb-knife/">Hackthebox Knife writeup</a>
@@ -421,6 +432,7 @@
                     </ul>
                 </div>
             </div>
+            <script>nanobar.go(70);</script>
             <!-- The Pannel on right side (Desktop views) v2.0 https://github.com/cotes2020/jekyll-theme-chirpy © 2017-2019 Cotes Chung MIT License -->
             <div id="panel-wrapper" class="col-xl-3 pl-2 topbar-down">
                 <div class="access">
@@ -473,6 +485,7 @@
 <a id="back-to-top" href="#" class="btn btn-lg btn-box-shadow" role="button">
     <i class="fas fa-angle-up"></i>
 </a>
+<script>nanobar.go(90);</script>
 <!-- Jekyll Simple Search loader v2.0 https://github.com/cotes2020/jekyll-theme-chirpy © 2017-2019 Cotes Chung MIT License -->
 <script src="https://cdn.jsdelivr.net/npm/simple-jekyll-search@1.7.3/dest/simple-jekyll-search.min.js" integrity="sha256-qcLR00zq6pJk4je3MLgAri8Nn+ZumUlXgTKR2H/xCY0=" crossorigin="anonymous"></script>
 <script>
@@ -490,5 +503,6 @@
         });
 </script>
 <script type="module" src="/components/Update.js"></script>
+<script>nanobar.go(100);</script>
 </body>
 </html>

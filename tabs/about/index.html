@@ -54,6 +54,7 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha256-5+02zu5UULQkO7w1GIr6vftCgMfFdZcAHeDtFnKZsBs=" crossorigin="anonymous" async></script>
 <script src="/assets/js/dist/commons.js" async></script>
 <script src="/assets/js/dist/tooltip-loader.min.js" async></script>
+<script src="/assets/js/nanobar.min.js"></script>
 <style>
     #portfolio{
   position: relative;
@@ -99,6 +100,14 @@
 }
 </style>
 <body data-spy="scroll" data-target="#toc">
+    <div id="top_loading_bar"></div>
+    <script>
+        var options = {
+            id: 'top_loading_bar',
+            target: document.getElementById('myDivId')
+        };
+        var nanobar = new Nanobar( options );
+    </script>
     <div id="sidebar" class="d-flex flex-column">
         <div id="nav-wrapper">
             <div id="profile-wrapper" class="d-flex flex-column">
@@ -153,6 +162,7 @@
                 </li>
             </ul>
         </div>
+        <script>nanobar.go(20);</script>
         <div class="sidebar-bottom d-flex flex-wrap justify-content-around mt-4">
             <span id="mode-toggle-wrapper">
                 <!-- Switch the mode between dark and light. v2.1 https://github.com/cotes2020/jekyll-theme-chirpy © 2020 Cotes Chung MIT License -->
@@ -268,6 +278,7 @@
             <span id="search-cancel">Cancel</span>
         </div>
     </div>
+    <script>nanobar.go(40);</script>
     <div id="main">
         <div class="row">
             <div class="col-12 col-lg-11 col-xl-8">
@@ -283,6 +294,7 @@
                                 <script src="/typewritter/script.js"></script>
                             </div>
                         </div>
+                        <script>nanobar.go(60);</script>
                         <br>
                         <center><span id="portfolio"><a href="../portfolio/"></a></span></center>
                         <br>
@@ -307,6 +319,7 @@
                 </div>
             </div>
         </div>
+        <script>nanobar.go(80);</script>
         <div class="row">
             <div class="col-12 col-lg-11 col-xl-8">
                 <div class="pl-1 pr-1 pl-sm-2 pr-sm-2 pl-md-4 pr-md-4"></div>
@@ -386,3 +399,4 @@
         });
 </script>
 <script type="module" src="/components/Update.js"></script>
+<script>nanobar.go(100);</script>
