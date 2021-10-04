@@ -262,5 +262,13 @@
         "tags": "SSRF",
         "date": "2021-09-12 00:00:00 +0000",
         "snippet": "Introduction@Forge:~$ Column Details Name Forge Os Linux Difficulty Medium..."
+    },
+    {
+        "title": "Hackthebox Driver Writeup",
+        "url": "/posts/htb-driver/",
+        "categories": "Hackthebox, active",
+        "tags": "SMB Share – SCF File Attacks,CVE-2021-1675",
+        "date": "2021-10-04 00:00:00 +0000",
+        "snippet": "Introduction@Driver:~$ Column Details Name Driver Os Windows Difficulty Easy..."
     }
 ]
