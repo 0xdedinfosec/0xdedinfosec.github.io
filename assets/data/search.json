@@ -194,7 +194,7 @@
     {
         "title": "Hackthebox Monitors Writeup",
         "url": "/posts/htb-monitors/",
-        "categories": "Hackthebox, active",
+        "categories": "Hackthebox, retired",
         "tags": "WordPress Plugin WP with Spritz 1.0,LFI to RCE,CVE-2020-14295,Apache OFBiz XML-RPC Java Deserialization,Abusing SYS_MODULE capability",
         "date": "2021-04-29 00:00:00 +0000",
         "snippet": "Introduction@Monitors:~$ Column Details Name Monitors Os Linux Difficulty Hard..."
