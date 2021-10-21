@@ -270,5 +270,13 @@
         "tags": "SMB Share – SCF File Attacks,CVE-2021-1675",
         "date": "2021-10-04 00:00:00 +0000",
         "snippet": "Introduction@Driver:~$ Column Details Name Driver Os Windows Difficulty Easy..."
+    },
+    {
+        "title": "Hackthebox Devzat Writeup",
+        "url": "/posts/htb-devzat/",
+        "categories": "Hackthebox, active",
+        "tags": "Git-Dumper,InfluxDB Exploit CVE-2019-20933,Text-Compare",
+        "date": "2021-10-21 00:00:00 +0000",
+        "snippet": "Introduction@Devzat:~$ Column Details Name Devzat Os Linux Difficulty Medium..."
     }
 ]
