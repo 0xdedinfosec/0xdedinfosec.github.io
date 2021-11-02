@@ -226,7 +226,7 @@
     {
         "title": "Hackthebox Spider Writeup",
         "url": "/posts/htb-spider/",
-        "categories": "Hackthebox, active",
+        "categories": "Hackthebox, retired",
         "tags": "Server Side Template Injection Payloads,XXE Cheatsheet",
         "date": "2021-06-01 00:00:00 +0000",
         "snippet": "Introduction@Spider:~$ Column Details Name Spider Os Linux Difficulty Hard..."
@@ -278,5 +278,13 @@
         "tags": "Git-Dumper,InfluxDB Exploit CVE-2019-20933,Text-Compare",
         "date": "2021-10-21 00:00:00 +0000",
         "snippet": "Introduction@Devzat:~$ Column Details Name Devzat Os Linux Difficulty Medium..."
+    },
+    {
+        "title": "Hackthebox Secret Writeup",
+        "url": "/posts/htb-secret/",
+        "categories": "Hackthebox, active",
+        "tags": "JWT,PRCTL,Apport,CrashReporting",
+        "date": "2021-11-02 00:00:00 +0000",
+        "snippet": "Introduction@Secret:~$ Column Details Name Secret Os Linux Difficulty Easy..."
     }
 ]
