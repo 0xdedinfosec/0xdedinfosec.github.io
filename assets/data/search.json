@@ -210,7 +210,7 @@
     {
         "title": "Hackthebox Pivotapi Writeup",
         "url": "/posts/htb-pivotapi/",
-        "categories": "Hackthebox, active",
+        "categories": "Hackthebox, retired",
         "tags": "CMD Watcher,API Monitor,PrintSpoofer,Mssql_Shell.py",
         "date": "2021-05-15 00:00:00 +0000",
         "snippet": "Introduction@Pivotapi:~$ Column Details Name Pivotapi Os Windows Difficulty Insane..."
